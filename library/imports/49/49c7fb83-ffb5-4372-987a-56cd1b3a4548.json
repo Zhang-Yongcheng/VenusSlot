@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "設定內-規則說明",
+    "texture": "89b2bfdf-bc78-42e1-80fc-7bc695248462",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      29,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      29,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

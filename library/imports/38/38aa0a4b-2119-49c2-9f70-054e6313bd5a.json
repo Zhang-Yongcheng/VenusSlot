@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "底層-押分",
+    "texture": "81db0b74-0593-4481-8285-d6da2f7813de",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      201,
+      105
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      203,
+      107
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

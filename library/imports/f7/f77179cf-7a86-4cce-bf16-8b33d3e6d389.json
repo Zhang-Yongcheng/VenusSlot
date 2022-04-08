@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "底層-暫停",
+    "texture": "829ddf25-16e5-4bb4-9923-060ecaa0d9bf",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      119,
+      119
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      121,
+      121
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

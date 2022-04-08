@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "slot line-08",
+    "texture": "5794d0e5-f529-4fd4-b74b-8c4601cb07f8",
+    "atlas": "",
+    "rect": [
+      0,
+      134,
+      850,
+      232
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      850,
+      500
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

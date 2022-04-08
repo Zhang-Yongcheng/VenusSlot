@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "上層-點數",
+    "texture": "d15548d3-3afb-4867-a248-65ae5dd2288c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      176,
+      48
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      176,
+      48
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "機器",
+    "texture": "71b1f97a-3f21-416f-834e-4ecdc114e664",
+    "atlas": "",
+    "rect": [
+      0,
+      3,
+      909,
+      607
+    ],
+    "offset": [
+      -7,
+      -1.5
+    ],
+    "originalSize": [
+      923,
+      610
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

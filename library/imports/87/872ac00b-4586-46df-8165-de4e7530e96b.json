@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "SlotEffect_00033",
+    "texture": "0f0b0c24-8c8b-4b1b-a570-f648ebe2043e",
+    "atlas": "",
+    "rect": [
+      7,
+      7,
+      186,
+      186
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      200,
+      200
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

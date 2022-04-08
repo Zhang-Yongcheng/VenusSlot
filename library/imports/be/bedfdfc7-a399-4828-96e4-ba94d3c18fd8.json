@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "設定內-聲音(開)",
+    "texture": "713309b4-883a-4ee1-85b3-03c84d8afbd3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      28,
+      27
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      28,
+      27
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "上層-設定下拉底",
+    "texture": "af9e0363-dd54-4bbb-b1d3-91a2c7a81edb",
+    "atlas": "",
+    "rect": [
+      3,
+      3,
+      52,
+      164
+    ],
+    "offset": [
+      1,
+      -0.5
+    ],
+    "originalSize": [
+      56,
+      169
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
