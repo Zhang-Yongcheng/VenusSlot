@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "15fdcf2a-ed1c-4682-90b1-2ea92c8bc387",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 200,
+  "height": 200,
+  "platformSettings": {},
+  "subMetas": {
+    "SlotEffect_00088": {
+      "ver": "1.0.6",
+      "uuid": "be671ab5-a89b-4ac9-9de0-79e52b88e3a0",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "15fdcf2a-ed1c-4682-90b1-2ea92c8bc387",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 2,
+      "offsetY": 70.5,
+      "trimX": 74,
+      "trimY": 8,
+      "width": 56,
+      "height": 43,
+      "rawWidth": 200,
+      "rawHeight": 200,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
