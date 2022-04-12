@@ -8,7 +8,9 @@ cc.Class({
   "extends": cc.Component,
   onLoad: function onLoad() {
     var button = this.node.getComponent(cc.Button);
-    button.node.on('click', function () {});
+    button.node.on('click', function () {
+      history.back();
+    });
   }
 });
 

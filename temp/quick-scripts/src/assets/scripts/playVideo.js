@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _co = _interopRequireDefault(require("./co.cc"));
 
+var _sound = _interopRequireDefault(require("./sound"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var PublicSetUp = require('PublicSetUp');
@@ -48,7 +50,11 @@ var playVideo = function () {
             videoPlayerNode.on('ready-to-play', function (player) {
               player.enabled = true;
               player.play();
-              cc.audioEngine.playEffect(PublicSetUp.audio1, true);
+
+              if (PublicSetUp.sound == 1) {
+                cc.audioEngine.playEffect(PublicSetUp.audio1, true);
+              }
+
               cc.find('Canvas/Game/Machine/Particle_coin').active = true;
               cc.find('Canvas/Game/Machine/VideoFrame').active = true;
             });

@@ -42,6 +42,7 @@ cc.Class({
         return cc.store.gameResultGotStatus === 3;
       },
       playing: false,
+      auto: false,
       canPlay: function canPlay() {
         return true;
       },
@@ -57,7 +58,6 @@ cc.Class({
         bundle.preloadDir('./', cc.VideoClip);
       }
     });
-    console.log(PublicSetUp.account);
     cc.find('Canvas/Game').active = false;
     var getUrlString = location.href;
     var url = new URL(getUrlString);

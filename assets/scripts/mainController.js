@@ -1,6 +1,7 @@
 import co from './co.cc';
 import connectToServer from './connectToServer';
 let PublicSetUp=require('PublicSetUp');
+
 cc.Class({
   extends: cc.Component,
 
@@ -37,6 +38,7 @@ cc.Class({
       },
 
       playing: false,
+      auto:false,
       canPlay() {
         return true;
       },
@@ -57,7 +59,7 @@ cc.Class({
         bundle.preloadDir('./', cc.VideoClip);
       }
     });
-    console.log(PublicSetUp.account);
+
     cc.find('Canvas/Game').active = false;
     var getUrlString = location.href;
     var url = new URL(getUrlString);  
@@ -68,6 +70,7 @@ cc.Class({
       connectToServer('213.139.235.73', 6380, PublicSetUp.account, PublicSetUp.password,0);
     }
     
+
   },
 
   update() {

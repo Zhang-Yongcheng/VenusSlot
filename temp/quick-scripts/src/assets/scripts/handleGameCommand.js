@@ -43,8 +43,8 @@ var handleGameCommand = function () {
           gameResult.freeGameNCnts = vals[5];
           gameResult.WinPointLine = vals[6];
           gameResult.WinTotalPoint = vals[7];
-          cc.store.userPoints = vals[8]; // console.log(vals[2]);
-          // console.log(vals[3]);
+          cc.store.userPoints = vals[8];
+          console.log('--' + gameResult.freeGameNCnts); // console.log(vals[3]);
           // console.log(vals[4]);
 
           if (gameResult.iGrid.some(function (val) {
@@ -58,6 +58,7 @@ var handleGameCommand = function () {
 
       case 3074:
         //　通知遊戲端免費遊戲結束
+        cc.store.type = 1;
         cc.store.FreeTotalPoint = vals[1];
         cc.store.userPoints = vals[2];
         break;

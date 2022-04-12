@@ -4,48 +4,40 @@ cc._RF.push(module, 'b0b669BCXVCUpQgg5VRna7b', 'freeSpinAnim');
 
 "use strict";
 
-exports.__esModule = true;
-exports["default"] = freeSpinAnim;
+//總次數，剩餘次數,狀態  0:正常 1:剛中獎，2:結束
+cc.Class({
+  "extends": cc.Component,
+  onLoad: function onLoad() {
+    var _this = this;
 
-var _co = _interopRequireDefault(require("./co.cc"));
+    var anim = cc.find('Canvas/Game/FreeSpin/FreeSpins').getComponent(cc.Animation);
+    anim.on('finished', function () {
+      _this.UIShow();
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _marked = /*#__PURE__*/regeneratorRuntime.mark(freeSpinAnim);
-
-function freeSpinAnim() {
-  var type;
-  return regeneratorRuntime.wrap(function freeSpinAnim$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          type = cc.store.gameResult.type;
-          console.log(type);
-
-          if (!(type == 2)) {
-            _context.next = 7;
-            break;
-          }
-
-          _context.next = 5;
-          return _co["default"].waitForSeconds(5);
-
-        case 5:
-          _context.next = 9;
-          break;
-
-        case 7:
-          _context.next = 9;
-          return;
-
-        case 9:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, _marked);
-}
-
-module.exports = exports["default"];
+      anim.node.active = false;
+    });
+  },
+  play: function play() {
+    var anim = cc.find('Canvas/Game/FreeSpin/FreeSpins').getComponent(cc.Animation);
+    anim.node.active = true;
+    anim.play();
+  },
+  UIShow: function UIShow() {
+    cc.find('Canvas/Game/Machine/Bg/3').active = true;
+    cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel').active = true;
+    cc.find('Canvas/Game/Machine/UI/BetPanel').active = false;
+    cc.find('Canvas/Game/Machine/UI/MaxBetButton').active = false;
+    cc.find('Canvas/Game/Machine/UI/AutoPlayButton').active = false;
+    cc.find('Canvas/Game/Machine/UI/ManuaPlayButton').active = false;
+  },
+  UIOff: function UIOff() {
+    cc.find('Canvas/Game/Machine/Bg/3').active = false;
+    cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel').active = false;
+    cc.find('Canvas/Game/Machine/UI/BetPanel').active = true;
+    cc.find('Canvas/Game/Machine/UI/MaxBetButton').active = true;
+    cc.find('Canvas/Game/Machine/UI/AutoPlayButton').active = true;
+    cc.find('Canvas/Game/Machine/UI/ManuaPlayButton').active = true;
+  }
+});
 
 cc._RF.pop();

@@ -12,8 +12,6 @@ var _playAll = _interopRequireDefault(require("./playAll"));
 
 var _shuffle = _interopRequireDefault(require("./shuffle"));
 
-var _freeSpinAnim = _interopRequireDefault(require("./freeSpinAnim"));
-
 var _requestTableInfo = _interopRequireDefault(require("./requestTableInfo"));
 
 var _requestGameResult = _interopRequireDefault(require("./requestGameResult"));
@@ -88,14 +86,14 @@ cc.Class({
     (0, _buildSymbols["default"])(symbolDataList);
 
     _co["default"].start( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var _cc$store2, _symbolDataList, _randomSymbolDataList, iGrid0, _i3, _j2, _k;
+      var _cc$store2, _symbolDataList, _randomSymbolDataList, iGrid0, _i3, _j2, _k, AutoPlayButton, ManuaPlayButton;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               if (!true) {
-                _context.next = 17;
+                _context.next = 18;
                 break;
               }
 
@@ -130,7 +128,6 @@ cc.Class({
               });
 
             case 8:
-              //yield freeSpinAnim();
               (0, _requestGameResult["default"])();
               _context.next = 11;
               return (0, _playAll["default"])();
@@ -139,18 +136,26 @@ cc.Class({
               (0, _requestTableInfo["default"])();
 
               if (!(cc.store.playing === true)) {
-                _context.next = 15;
+                _context.next = 16;
                 break;
               }
 
-              _context.next = 15;
+              if (cc.store.auto == false) {
+                cc.store.playing = false;
+                AutoPlayButton = cc.find('Canvas/Game/Machine/UI/playButton');
+                AutoPlayButton.active = true;
+                ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/PauseButton');
+                ManuaPlayButton.active = false;
+              }
+
+              _context.next = 16;
               return _co["default"].waitForSeconds(1.2);
 
-            case 15:
+            case 16:
               _context.next = 0;
               break;
 
-            case 17:
+            case 18:
             case "end":
               return _context.stop();
           }

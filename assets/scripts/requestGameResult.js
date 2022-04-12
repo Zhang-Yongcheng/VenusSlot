@@ -87,7 +87,13 @@ const requestGameResult = (function () {
 
     cc.store.gameResultGotStatus = 1;
 
-    cc.store?.gameServer.GetPI().sendData(3162, cc.store.currentBet);
+    const {type} = cc.store.gameResult;
+    if(type==2){
+      cc.store?.gameServer.GetPI().sendData(3162, 0);
+    }else{
+      cc.store?.gameServer.GetPI().sendData(3162, cc.store.currentBet);
+    }
+    
     console.log(3162);
 
     coGroup.start(function* () {

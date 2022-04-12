@@ -43,7 +43,7 @@ const handleGameCommand = (function () {
 
           cc.store.userPoints = vals[8];
 
-          // console.log(vals[2]);
+           console.log('--'+gameResult.freeGameNCnts);
           // console.log(vals[3]);
           // console.log(vals[4]);
 
@@ -54,6 +54,7 @@ const handleGameCommand = (function () {
         break;
 
       case 3074: //　通知遊戲端免費遊戲結束
+        cc.store.type=1;
         cc.store.FreeTotalPoint=vals[1];
         cc.store.userPoints = vals[2];
         break;

@@ -4,6 +4,8 @@ cc._RF.push(module, 'ffb6fjQ0+RNLo0s6j9YDXb0', 'soundOnButton');
 
 "use strict";
 
+var PublicSetUp = require('PublicSetUp');
+
 cc.Class({
   "extends": cc.Component,
   onLoad: function onLoad() {
@@ -11,6 +13,8 @@ cc.Class({
     button.node.on('click', function () {
       if (cc.store.soundEnabled === false) {
         cc.store.soundEnabled = true;
+        PublicSetUp.sound = 1;
+        cc.audioEngine.playMusic(PublicSetUp.MusicClip, true);
         button.node.active = false;
         button.getComponent(cc.Button).interactable = false;
         var soundOffButton = cc.find('Canvas/Game/Machine/UI/Menu/SettingsPanel/SoundOffButton');

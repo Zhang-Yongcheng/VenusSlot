@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "FreeSpinsPanel",
+    "texture": "0a400ec7-db9e-4d67-b6f3-d3ce0e3d7068",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      509,
+      146
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      511,
+      148
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

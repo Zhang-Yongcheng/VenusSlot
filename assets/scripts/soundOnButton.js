@@ -1,3 +1,5 @@
+
+let PublicSetUp=require('PublicSetUp');
 cc.Class({
   extends: cc.Component,
 
@@ -6,7 +8,8 @@ cc.Class({
     button.node.on('click', () => {
       if (cc.store.soundEnabled === false) {
         cc.store.soundEnabled = true;
-
+        PublicSetUp.sound=1;
+        cc.audioEngine.playMusic(PublicSetUp.MusicClip, true);
         button.node.active = false;
         button.getComponent(cc.Button).interactable = false;
 

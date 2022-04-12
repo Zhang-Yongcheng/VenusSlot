@@ -1,5 +1,5 @@
 {
-  "projectPath": "D:\\cocosCreatorProject\\VenusSlot",
+  "projectPath": "D:\\VenusSlot",
   "actualPlatform": "web-mobile",
   "mtimes": {
     "35eee3eb-29c3-4525-a94f-8397b91dd840": {
@@ -112,7 +112,7 @@
             "name": "slot line-05",
             "uuid": "8c7b7edc-1799-4052-a499-3d61f5f055f8",
             "textureUuid": "71f33201-3ff0-4dfe-b3db-06170a3fe714",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_4.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186595_image_4.png",
             "trim": {
               "x": 3,
               "y": 3,
@@ -125,7 +125,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 441,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/71/71f33201-3ff0-4dfe-b3db-06170a3fe714.png",
+            "originalPath": "D:/VenusSlot/library/imports/71/71f33201-3ff0-4dfe-b3db-06170a3fe714.png",
             "x": 0,
             "y": 0,
             "rotatedWidth": 856,
@@ -135,7 +135,7 @@
             "name": "slot line-03",
             "uuid": "484d89ab-936f-43bf-9283-b3bf3f9980af",
             "textureUuid": "458af6f0-bee5-425d-8506-a0df49f91855",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_2.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186594_image_2.png",
             "trim": {
               "x": 859,
               "y": 3,
@@ -148,7 +148,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 80,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/45/458af6f0-bee5-425d-8506-a0df49f91855.png",
+            "originalPath": "D:/VenusSlot/library/imports/45/458af6f0-bee5-425d-8506-a0df49f91855.png",
             "x": 856,
             "y": 0,
             "rotated": true,
@@ -159,7 +159,7 @@
             "name": "slot line-04",
             "uuid": "ef8bcca6-52c8-423f-8a2b-755e8b4b73c9",
             "textureUuid": "dd3235e5-aa1d-4c45-a149-8e44c3566ba3",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_6.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186595_image_6.png",
             "trim": {
               "x": 3,
               "y": 444,
@@ -172,7 +172,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 441,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/dd/dd3235e5-aa1d-4c45-a149-8e44c3566ba3.png",
+            "originalPath": "D:/VenusSlot/library/imports/dd/dd3235e5-aa1d-4c45-a149-8e44c3566ba3.png",
             "x": 0,
             "y": 441,
             "rotatedWidth": 856,
@@ -182,7 +182,7 @@
             "name": "slot line-01",
             "uuid": "75162f46-1d53-4088-86f3-7d5da5d120da",
             "textureUuid": "6c82da8e-bdf4-4e45-96f6-8369362d589b",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_3.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186594_image_3.png",
             "trim": {
               "x": 939,
               "y": 3,
@@ -195,7 +195,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 80,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/6c/6c82da8e-bdf4-4e45-96f6-8369362d589b.png",
+            "originalPath": "D:/VenusSlot/library/imports/6c/6c82da8e-bdf4-4e45-96f6-8369362d589b.png",
             "x": 936,
             "y": 0,
             "rotated": true,
@@ -206,7 +206,7 @@
             "name": "slot line-02",
             "uuid": "fc8eebde-c6f6-47cb-a7f2-bf978de5d8ca",
             "textureUuid": "a7ae4d72-ad68-4665-b893-45ece87499b2",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411353_image_8.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186595_image_8.png",
             "trim": {
               "x": 3,
               "y": 885,
@@ -219,7 +219,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 80,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/a7/a7ae4d72-ad68-4665-b893-45ece87499b2.png",
+            "originalPath": "D:/VenusSlot/library/imports/a7/a7ae4d72-ad68-4665-b893-45ece87499b2.png",
             "x": 0,
             "y": 882,
             "rotatedWidth": 856,
@@ -229,12 +229,12 @@
         "width": 1016,
         "height": 962,
         "name": "AutoAtlas-1",
-        "imagePath": "D:\\cocosCreatorProject\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\AutoAtlas-1.png",
+        "imagePath": "D:\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\AutoAtlas-1.png",
         "compressd": {
           "suffix": [
             ".png"
           ],
-          "imagePathNoExt": "D:\\cocosCreatorProject\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\compressed\\AutoAtlas-1"
+          "imagePathNoExt": "D:\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\compressed\\AutoAtlas-1"
         }
       },
       {
@@ -243,7 +243,7 @@
             "name": "slot line-06",
             "uuid": "18947765-cf87-4d60-9a58-b323550e92a1",
             "textureUuid": "71cae1f9-6f11-4c0f-a0da-b3ab04a8b4d8",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411351_image_0.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186594_image_0.png",
             "trim": {
               "x": 3,
               "y": 3,
@@ -256,7 +256,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 244,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/71/71cae1f9-6f11-4c0f-a0da-b3ab04a8b4d8.png",
+            "originalPath": "D:/VenusSlot/library/imports/71/71cae1f9-6f11-4c0f-a0da-b3ab04a8b4d8.png",
             "x": 0,
             "y": 0,
             "rotatedWidth": 856,
@@ -266,7 +266,7 @@
             "name": "slot line-07",
             "uuid": "f7e1035b-6c4f-450a-a392-c7952add015e",
             "textureUuid": "46681470-2749-4207-a8b8-d28c038b2478",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_7.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186595_image_7.png",
             "trim": {
               "x": 3,
               "y": 247,
@@ -279,7 +279,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 244,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/46/46681470-2749-4207-a8b8-d28c038b2478.png",
+            "originalPath": "D:/VenusSlot/library/imports/46/46681470-2749-4207-a8b8-d28c038b2478.png",
             "x": 0,
             "y": 244,
             "rotatedWidth": 856,
@@ -289,7 +289,7 @@
             "name": "slot line-08",
             "uuid": "48121acc-7b0f-4694-9e46-a810f2b96f5d",
             "textureUuid": "5794d0e5-f529-4fd4-b74b-8c4601cb07f8",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_1.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186594_image_1.png",
             "trim": {
               "x": 3,
               "y": 491,
@@ -302,7 +302,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 238,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/57/5794d0e5-f529-4fd4-b74b-8c4601cb07f8.png",
+            "originalPath": "D:/VenusSlot/library/imports/57/5794d0e5-f529-4fd4-b74b-8c4601cb07f8.png",
             "x": 0,
             "y": 488,
             "rotatedWidth": 856,
@@ -312,7 +312,7 @@
             "name": "slot line-09",
             "uuid": "ca5b1c4a-dffd-4815-a9e0-306b6a2bc000",
             "textureUuid": "8d5bd7e4-333b-4218-b60f-5fbe574fc56c",
-            "path": "D:\\cocosCreatorProject\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649233411352_image_5.png",
+            "path": "D:\\VenusSlot\\temp\\trimImages\\spritesheet_js_1649656186595_image_5.png",
             "trim": {
               "x": 3,
               "y": 729,
@@ -325,7 +325,7 @@
             "rawHeight": 500,
             "width": 856,
             "height": 238,
-            "originalPath": "D:/cocosCreatorProject/VenusSlot/library/imports/8d/8d5bd7e4-333b-4218-b60f-5fbe574fc56c.png",
+            "originalPath": "D:/VenusSlot/library/imports/8d/8d5bd7e4-333b-4218-b60f-5fbe574fc56c.png",
             "x": 0,
             "y": 726,
             "rotatedWidth": 856,
@@ -335,12 +335,12 @@
         "width": 856,
         "height": 964,
         "name": "AutoAtlas-2",
-        "imagePath": "D:\\cocosCreatorProject\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\AutoAtlas-2.png",
+        "imagePath": "D:\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\AutoAtlas-2.png",
         "compressd": {
           "suffix": [
             ".png"
           ],
-          "imagePathNoExt": "D:\\cocosCreatorProject\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\compressed\\AutoAtlas-2"
+          "imagePathNoExt": "D:\\VenusSlot\\temp\\TexturePacker\\build\\native\\assets\\textures\\lines\\AutoAtlas.pac\\compressed\\AutoAtlas-2"
         }
       }
     ],

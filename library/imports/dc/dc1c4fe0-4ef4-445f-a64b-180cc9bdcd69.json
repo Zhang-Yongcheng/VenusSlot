@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "底層-手動",
+    "texture": "0a16c2f2-6e8f-4907-a09e-27b7e0bc749d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      92,
+      57
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      92,
+      57
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
