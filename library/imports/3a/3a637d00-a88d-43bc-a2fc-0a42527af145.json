@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "GameRule-李萱",
+    "texture": "d0fde28a-8b65-4090-b97b-19613fd32cc8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      800,
+      500
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      800,
+      500
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

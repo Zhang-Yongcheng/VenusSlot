@@ -47,7 +47,7 @@ export default function* playAll() {
     );
   }
   yield co.waitForAll(cols);
-  const {type, iLine, iFrame,freeGameNCnts, WinPointLine, WinTotalPoint } = cc.store.gameResult;
+  const {type, iLine, iFrame,freeGameNCnts, WinPointLine, WinTotalPoint ,heart,VideoIdx} = cc.store.gameResult;
 
   // 2
   let lastLine = -1;
@@ -84,9 +84,9 @@ export default function* playAll() {
 
     // 4
     if (lines.length >= 2) {
-      yield playVideo('random');
-      cc.find('Canvas/Game/Machine/Particle_coin').active=false;
-      cc.find('Canvas/Game/Machine/VideoFrame').active=false;
+      yield playVideo('random',0);
+      
+      
       cc.audioEngine.stopAll(PublicSetUp.audio1, false);
       if(PublicSetUp.sound==1){
         cc.audioEngine.playMusic(PublicSetUp.MusicClip, true);
@@ -96,6 +96,14 @@ export default function* playAll() {
     }
   }
   
+
+    let heartObj=cc.find('Canvas/Game/heartPanel').getComponent("heart");
+    heartObj.show(heart);
+
+
+    if(VideoIdx!=null && VideoIdx!=0){
+      yield playVideo('index',VideoIdx);
+    }
     // if(PublicSetUp.test==11){
     //   freeGameNCnts[0]=1;
     //   PublicSetUp.test--;
@@ -122,25 +130,30 @@ export default function* playAll() {
         cc.store.type=2;
       }
       
-      cc.store.auto=true;
+      cc.store.auto=false;
       anim.play();
       yield co.waitForSeconds(3.1);
       cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string=freeGameNCnts[1];
       
-    }
-    if(cc.store.type==2){
+    }else if(type==2){
       //如果目前是免費遊戲
       cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string=freeGameNCnts[2];
       let _total =addFloat(PublicSetUp.freeSpinTotal,cc.store.gameResult.WinTotalPoint);    
       PublicSetUp.freeSpinTotal=_total;
       cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=PublicSetUp.freeSpinTotal;
+      if(freeGameNCnts[2]==0){
+        cc.store.type=1;
+      }
     }
     
     if(cc.store.type==1){
       //最後一次
       cc.store.type=0;
-      cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=cc.store.FreeTotalPoint;
-      yield co.waitForSeconds(1.2);     
+      if(cc.store.FreeTotalPoint!=null){
+        cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=cc.store.FreeTotalPoint;
+      }
+      
+      yield co.waitForSeconds(2);     
       anim.UIOff();
       PublicSetUp.freeSpinTotal=0
       if(cc.store.type==3){

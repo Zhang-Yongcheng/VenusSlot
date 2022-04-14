@@ -44,6 +44,8 @@ var handleGameCommand = function () {
           gameResult.WinPointLine = vals[6];
           gameResult.WinTotalPoint = vals[7];
           cc.store.userPoints = vals[8];
+          gameResult.heart = vals[9];
+          gameResult.VideoIdx = vals[10];
           console.log('--' + gameResult.freeGameNCnts); // console.log(vals[3]);
           // console.log(vals[4]);
 

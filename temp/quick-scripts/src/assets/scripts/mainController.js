@@ -35,6 +35,8 @@ cc.Class({
       currentBet: 0,
       freeGameCnts: 0,
       FreeTotalPoint: 0,
+      Heart: 0,
+      VideoIdx: 0,
       soundEnabled: true,
       gameResult: {},
       gameResultGotStatus: 0,

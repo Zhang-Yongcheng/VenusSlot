@@ -16,10 +16,8 @@ cc.Class({
       console.log(cc.store.auto);
       var AutoPlayButton = cc.find('Canvas/Game/Machine/UI/AutoPlayButton');
       AutoPlayButton.active = true;
-      AutoPlayButton.getComponent(cc.Button).interactable = true;
       var ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/ManuaPlayButton');
       ManuaPlayButton.active = false;
-      ManuaPlayButton.getComponent(cc.Button).interactable = false;
     });
   }
 });

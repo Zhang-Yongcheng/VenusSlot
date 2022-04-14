@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "愛心",
+    "texture": "1cb25716-247a-4347-994b-4e313193ca35",
+    "atlas": "",
+    "rect": [
+      4,
+      5,
+      142,
+      130
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      150,
+      140
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

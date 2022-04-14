@@ -35,7 +35,7 @@ cc.Class({
 
   start() {
     
-    
+
     cc.store.symbolDataList = new Array(5);
     cc.store.randomSymbolDataList = new Array(cc.store.symbolDataList.length);
 

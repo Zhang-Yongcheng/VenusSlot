@@ -24,9 +24,11 @@ var playVideo = function () {
     player.enabled = false;
     player.clip = null;
     playing = false;
+    cc.find('Canvas/Game/Machine/VideoFrame').active = false;
+    cc.find('Canvas/Game/Machine/Particle_coin').active = false;
   }
 
-  return /*#__PURE__*/regeneratorRuntime.mark(function playVideo(name) {
+  return /*#__PURE__*/regeneratorRuntime.mark(function playVideo(name, index) {
     var list, clip, done;
     return regeneratorRuntime.wrap(function playVideo$(_context) {
       while (1) {
@@ -55,7 +57,10 @@ var playVideo = function () {
                 cc.audioEngine.playEffect(PublicSetUp.audio1, true);
               }
 
-              cc.find('Canvas/Game/Machine/Particle_coin').active = true;
+              if (index === 0) {
+                cc.find('Canvas/Game/Machine/Particle_coin').active = true;
+              }
+
               cc.find('Canvas/Game/Machine/VideoFrame').active = true;
             });
             videoPlayerNode.on('error', onDone);
@@ -80,6 +85,8 @@ var playVideo = function () {
             if (name === 'random') {
               list = ['LINE_MOVIE_1643105941778', 'LINE_MOVIE_1643105948791'];
               name = list[Math.floor(Math.random() * list.length)];
+            } else if (name === 'index') {
+              name = String(index);
             }
 
             clip = videoBundle.get(name, cc.VideoClip);
