@@ -5,21 +5,21 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": -8,
-      "y": -8,
-      "width": 1936,
-      "height": 1056,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1040,
       "layout": {
         "type": "dock-h",
         "children": [
           {
-            "width": 313.84375,
+            "width": 204,
             "height": 919.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 313.84375,
-                "height": 467.578125,
+                "width": 204,
+                "height": 467.75,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 313.84375,
-                "height": 448.921875,
+                "width": 204,
+                "height": 448.75,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,13 +38,13 @@
             ]
           },
           {
-            "width": 1280.15625,
+            "width": 1389.984375,
             "height": 919.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 1280.15625,
-                "height": 597.25,
+                "width": 1389.984375,
+                "height": 597.328125,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -52,8 +52,8 @@
                 ]
               },
               {
-                "width": 1280.15625,
-                "height": 319.25,
+                "width": 1389.984375,
+                "height": 319.171875,
                 "type": "panel",
                 "active": 1,
                 "children": [
@@ -87,13 +87,12 @@
         "cocos-services"
       ]
     },
-    " common-asset-worker-worker": {},
-    "window-1649926396375": {}
+    " common-asset-worker-worker": {}
   },
   "panels": {
     "builder": {
-      "x": 1089,
-      "y": 100,
+      "x": 604,
+      "y": 124,
       "width": 516,
       "height": 739
     },

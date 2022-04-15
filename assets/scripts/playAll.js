@@ -130,7 +130,7 @@ export default function* playAll() {
         cc.store.type=2;
       }
       
-      cc.store.auto=false;
+      cc.store.auto=true;
       anim.play();
       yield co.waitForSeconds(3.1);
       cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string=freeGameNCnts[1];

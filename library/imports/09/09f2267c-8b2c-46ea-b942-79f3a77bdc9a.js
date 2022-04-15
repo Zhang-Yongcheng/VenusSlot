@@ -237,7 +237,7 @@ function playAll() {
             cc.store.type = 2;
           }
 
-          cc.store.auto = false;
+          cc.store.auto = true;
           anim.play();
           _context3.next = 50;
           return _co["default"].waitForSeconds(3.1);
