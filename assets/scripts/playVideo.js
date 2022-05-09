@@ -1,6 +1,5 @@
 import co from './co.cc';
 let PublicSetUp=require('PublicSetUp');
-import sound from './sound';
 const playVideo = (function () {
   let videoPlayerNode = null;
   let videoBundle = null;
@@ -24,11 +23,13 @@ const playVideo = (function () {
       videoPlayerNode.on('ready-to-play', player => {
         player.enabled = true;
         player.play();
-        if(PublicSetUp.sound==1){
+        cc.audioEngine.playEffect(PublicSetUp.audio["0014"], false);
+        if (index === 0 || index === 6 || index === 7){
+          if(PublicSetUp.sound==1){
             
-          cc.audioEngine.playEffect(PublicSetUp.audio1, true);
-        }
-        if (index === 0){
+            cc.audioEngine.playEffect(PublicSetUp.audio["0021"], false);
+            
+          }
           cc.find('Canvas/Game/Machine/Particle_coin').active=true;
         }
         

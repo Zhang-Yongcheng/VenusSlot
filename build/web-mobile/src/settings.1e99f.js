@@ -1,0 +1,1 @@
+window._CCSettings={platform:"web-mobile",groupList:["default"],collisionMatrix:[[true]],hasResourcesBundle:true,hasStartSceneBundle:false,remoteBundles:[],subpackages:[],launchScene:"db://assets/Scene/slot.fire",orientation:"landscape",jsList:["assets/scripts/polyfill.min.80d61.js"],bundleVers:{mp4:"34fc1",resources:"b7da8",internal:"d17e2",main:"65ea4"}};

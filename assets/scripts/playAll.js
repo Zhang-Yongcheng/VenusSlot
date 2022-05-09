@@ -2,7 +2,6 @@ import co from './co.cc';
 import playLine from './playLine';
 import playSymbolCol from './playSymbolCol';
 import playVideo from './playVideo';
-import { test } from './PublicSetUp';
 let PublicSetUp=require('PublicSetUp');
 
 
@@ -46,6 +45,11 @@ export default function* playAll() {
       })
     );
   }
+
+if(PublicSetUp.sound==1){
+            
+  cc.audioEngine.playEffect(PublicSetUp.audio["0024"], false);
+}
   yield co.waitForAll(cols);
   const {type, iLine, iFrame,freeGameNCnts, WinPointLine, WinTotalPoint ,heart,VideoIdx} = cc.store.gameResult;
 
@@ -57,11 +61,18 @@ export default function* playAll() {
       break;
     }
   }
+  let score=cc.find('Canvas/Game/score').getComponent("score");
   if (lastLine > -1) {
     for (let i = 0; i < 9; i++) {
       if (iLine[i] === 1) {
         cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinPointLine[i];
-        yield playLine(i, iFrame[i], true, i === lastLine, 4.5, 3200);
+
+        score.run(cc.store.gameResult.WinPointLine[i]);
+        if(PublicSetUp.sound==1){
+            
+          cc.audioEngine.playEffect(PublicSetUp.audio["0022"], false);
+        }
+        yield playLine(i, iFrame[i], true, i === lastLine, 4.5, 1000);
 
       }
     }
@@ -72,7 +83,7 @@ export default function* playAll() {
       if (iLine[i] === 1) {
         lines.push(
           co.start(function* () {
-            yield playLine(i, iFrame[i], false, false, 4.5, 3700);
+            yield playLine(i, iFrame[i], false, false, 4.5, 1500);
 
           })
         );
@@ -85,9 +96,8 @@ export default function* playAll() {
     // 4
     if (lines.length >= 2) {
       yield playVideo('random',0);
-      
-      
-      cc.audioEngine.stopAll(PublicSetUp.audio1, false);
+
+
       if(PublicSetUp.sound==1){
         cc.audioEngine.playMusic(PublicSetUp.MusicClip, true);
       }
@@ -96,27 +106,15 @@ export default function* playAll() {
     }
   }
   
-
-    let heartObj=cc.find('Canvas/Game/heartPanel').getComponent("heart");
-    heartObj.show(heart);
+  //
+  let heartObj=cc.find('Canvas/Game/heartPanel').getComponent("heart");
+  heartObj.show(heart);
 
 
     if(VideoIdx!=null && VideoIdx!=0){
       yield playVideo('index',VideoIdx);
     }
-    // if(PublicSetUp.test==11){
-    //   freeGameNCnts[0]=1;
-    //   PublicSetUp.test--;
-    //   freeGameNCnts[1]=PublicSetUp.test;
-    // }else if(PublicSetUp.test<11){
-    //   cc.store.type=2;
-    //   PublicSetUp.test--;
-    //   freeGameNCnts[2]=PublicSetUp.test;
-    //   if(PublicSetUp.test==0){
-    //     cc.store.type=1;
-    //     PublicSetUp.test=12;
-    //   }
-    // }
+
     //freeSpin
     let anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim");
     if(freeGameNCnts[0]==1 && cc.store.type==0){

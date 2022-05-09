@@ -26,12 +26,19 @@ cc.Class({
   },
   onLoad: function onLoad() {
     // co.enableAutoTick(30);
-    PublicSetUp.audio1 = this.AudioClip[0];
+    //PublicSetUp.audio1 = this.AudioClip[0];
+    for (var i = 0; i < this.AudioClip.length; i++) {
+      PublicSetUp.audio[this.AudioClip[i].name] = this.AudioClip[i];
+    }
+
     PublicSetUp.MusicClip = this.MusicClip;
     cc.store = {
       type: 0,
       minBet: 0,
       maxBet: 0,
+      cardPot: 0,
+      cardRatio: 0,
+      cardcnts: 0,
       currentBet: 0,
       freeGameCnts: 0,
       FreeTotalPoint: 0,

@@ -1,28 +1,36 @@
 let PublicSetUp=require('PublicSetUp');
 
-
-let loadCount = 0;
 cc.Class({
     extends: cc.Component,
 
     properties: {
-      AudioClip: {
-        default: [],
-        type: [cc.AudioClip],
-    },
+     
     },
 
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
-      PublicSetUp.audio1 = this.AudioClip[0];
+    //   cc.resources.loadDir("Music/sound/", cc.AudioClip, function (err, Clip) {
+    //     if (err) {
+    //         cc.error(err);
+    //         return;
+    //     } else {
+    //         for (let i = 0; i < Clip.length; i++) {
+    //             PublicSetUp.audio[Clip[i].name] = Clip[i];
+    //         }
+    //         cc.log(PublicSetUp.audio);
+
+    //     }
+    // });
 
 
    
      },
 
     start () {
-
+      
+      
+  
       //Token登入
       var getUrlString = location.href;
       var url = new URL(getUrlString);   
@@ -38,8 +46,8 @@ cc.Class({
         let passwordEditBox = cc.find("Canvas/Login/Password").getComponent(cc.EditBox);
         let message = cc.find("Canvas/Login/message").getComponent(cc.Label);
 
-        //accountEditBox.string='gtest001';
-        //passwordEditBox.string='gtest001';
+        accountEditBox.string='gtest001';
+        passwordEditBox.string='gtest001';
         const okButton = cc.find("Canvas/Login/Ok").getComponent(cc.Button);
 
         okButton.node.on('click', () => {

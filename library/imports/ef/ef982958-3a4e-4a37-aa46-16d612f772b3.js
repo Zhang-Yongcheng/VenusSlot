@@ -6,18 +6,21 @@ cc._RF.push(module, 'ef982lYOk5KN6pGFtYS93Kz', 'LoginScene');
 
 var PublicSetUp = require('PublicSetUp');
 
-var loadCount = 0;
 cc.Class({
   "extends": cc.Component,
-  properties: {
-    AudioClip: {
-      "default": [],
-      type: [cc.AudioClip]
-    }
-  },
+  properties: {},
   // LIFE-CYCLE CALLBACKS:
-  onLoad: function onLoad() {
-    PublicSetUp.audio1 = this.AudioClip[0];
+  onLoad: function onLoad() {//   cc.resources.loadDir("Music/sound/", cc.AudioClip, function (err, Clip) {
+    //     if (err) {
+    //         cc.error(err);
+    //         return;
+    //     } else {
+    //         for (let i = 0; i < Clip.length; i++) {
+    //             PublicSetUp.audio[Clip[i].name] = Clip[i];
+    //         }
+    //         cc.log(PublicSetUp.audio);
+    //     }
+    // });
   },
   start: function start() {
     //Token登入
@@ -33,9 +36,9 @@ cc.Class({
 
     var accountEditBox = cc.find("Canvas/Login/Account").getComponent(cc.EditBox);
     var passwordEditBox = cc.find("Canvas/Login/Password").getComponent(cc.EditBox);
-    var message = cc.find("Canvas/Login/message").getComponent(cc.Label); //accountEditBox.string='gtest001';
-    //passwordEditBox.string='gtest001';
-
+    var message = cc.find("Canvas/Login/message").getComponent(cc.Label);
+    accountEditBox.string = 'gtest001';
+    passwordEditBox.string = 'gtest001';
     var okButton = cc.find("Canvas/Login/Ok").getComponent(cc.Button);
     okButton.node.on('click', function () {
       if (accountEditBox.string.length === 0 || passwordEditBox.string.length === 0) {

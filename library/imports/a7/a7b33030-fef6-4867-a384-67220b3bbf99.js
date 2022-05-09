@@ -104,6 +104,9 @@ var BaseCmdLogic;
                 console.log('沒有進行遊戲的權限');
                 break;
             }
+
+            cc.find('Canvas/LoginMessage/gohome').active = true;
+            cc.find('Canvas/LoginMessage/text').getComponent(cc.Label).string = "登入失敗";
           }
 
           break;

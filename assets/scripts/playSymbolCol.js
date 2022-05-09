@@ -1,5 +1,5 @@
 import co from './co.cc';
-
+let PublicSetUp=require('PublicSetUp');
 export default function* playSymbolCol(colIndex, speed) {
   const cols = cc.find('Canvas/Game/Machine/Performance/Cols');
   const col = cols.getChildByName(`${colIndex + 1}`);
@@ -42,6 +42,7 @@ export default function* playSymbolCol(colIndex, speed) {
         dist0 = newDist - movedDist;
         dist = dist0;
         col.redist2 = 0;
+
       }
     }
     dist -= dy;

@@ -14,8 +14,9 @@ cc.Class({
       if (cc.store.soundEnabled === true) {
         cc.store.soundEnabled = false;
         button.node.active = false;
+        PublicSetUp.sound = 0;
         button.getComponent(cc.Button).interactable = false;
-        cc.audioEngine.stopAll(PublicSetUp.audio1, false);
+        cc.audioEngine.stopAll();
         cc.audioEngine.stopMusic();
         var soundOnButton = cc.find('Canvas/Game/Machine/UI/Menu/SettingsPanel/SoundOnButton');
         soundOnButton.active = true;

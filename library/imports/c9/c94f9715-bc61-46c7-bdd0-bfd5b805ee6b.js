@@ -4,13 +4,10 @@ cc._RF.push(module, 'c94f9cVvGFGx73Qv9W4Be5r', 'heart');
 
 "use strict";
 
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+var PublicSetUp = require('PublicSetUp');
+
 var heartcnt = [];
+var pos = [[570, 292], [570, 196], [570, 98], [570, 0], [570, -103]];
 cc.Class({
   "extends": cc.Component,
   properties: {// foo: {
@@ -39,17 +36,35 @@ cc.Class({
     this.closeHeart();
   },
   show: function show(cnt) {
-    for (var i = 0; i < 5; i++) {
-      heartcnt[i].active = false;
+    if (cnt != 0 && heartcnt[cnt].active == false) {
+      if (PublicSetUp.sound == 1) {
+        cc.audioEngine.playEffect(PublicSetUp.audio["0012"], false);
+      }
+
+      heartcnt[cnt].active = true;
+      cc.tween(heartcnt[cnt]).to(0, {
+        scale: 0.5,
+        position: cc.v2(-117, -23)
+      }).to(1, {
+        scale: 1,
+        position: cc.v2(pos[cnt][0], pos[cnt][1])
+      }).start();
     }
 
-    for (var _i = 0; _i < cnt; _i++) {
-      heartcnt[_i].active = true;
-    }
+    if (cnt == 0) {
+      this.closeHeart();
+    } // for(let i=0;i<5;i++){
+    //     heartcnt[i].active=false;
+    // }
+    // for(let i=0;i<cnt;i++){
+    //     heartcnt[i].active=true;
+    // }
+
   },
   closeHeart: function closeHeart() {
     for (var i = 0; i < 5; i++) {
       heartcnt[i].active = false;
+      heartcnt[i].setPosition(-177, -23, 0);
     }
   } // update (dt) {},
 

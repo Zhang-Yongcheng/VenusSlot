@@ -59,6 +59,7 @@ var BaseCmdLogic;
             //直接等server通知 lobby server 資訊再做連線
 
           } else {
+
             switch (
               vals[1] //（0：失敗, 2：版本錯誤, 3：維護中, 4:重複登入, 5:之前遊戲局尚未結束 6：沒有進行遊戲的權限（洽客服））
             ) {
@@ -82,6 +83,8 @@ var BaseCmdLogic;
                 break;
             }
 
+            cc.find('Canvas/LoginMessage/gohome').active = true;
+            cc.find('Canvas/LoginMessage/text').getComponent(cc.Label).string="登入失敗";
           }
           break;
       }

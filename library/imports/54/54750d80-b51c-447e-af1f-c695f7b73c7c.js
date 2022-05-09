@@ -26,6 +26,7 @@ var handleGameCommand = function () {
           // hide login
           // play bg music
 
+          cc.find('Canvas/LoginMessage').active = false;
           cc.find('Canvas/Game').active = true;
         }
 
@@ -63,6 +64,25 @@ var handleGameCommand = function () {
         cc.store.type = 1;
         cc.store.FreeTotalPoint = vals[1];
         cc.store.userPoints = vals[2];
+        break;
+
+      case 3075:
+        //　jackpot點數
+        cc.store.cardPot = vals[1];
+        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = cc.store.cardPot;
+        break;
+
+      case 3076:
+        //　特殊卡牌
+        cc.store.cardRatio = vals[1];
+        cc.store.cardcnts = vals[2]; //cc.find('Canvas/Game/Card/ProgressBar').getComponent(cc.ProgressBar).progress = cc.store.cardRatio;
+
+        cc.find('Canvas/Game/Card/cardback/Value').getComponent(cc.Label).string = cc.store.cardcnts;
+
+        if (cc.store.cardcnts == 0) {
+          cc.find('Canvas/Game/Card/ProgressBar').active = false;
+        }
+
         break;
     }
   };

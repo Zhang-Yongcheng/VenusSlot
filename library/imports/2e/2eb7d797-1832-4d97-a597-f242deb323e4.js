@@ -13,6 +13,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var _marked = /*#__PURE__*/regeneratorRuntime.mark(playSymbolCol);
 
+var PublicSetUp = require('PublicSetUp');
+
 function playSymbolCol(colIndex, speed) {
   var cols, col, spacing, dist0, dist, t0, dt, dy, newDist, movedDist, t1;
   return regeneratorRuntime.wrap(function playSymbolCol$(_context) {
