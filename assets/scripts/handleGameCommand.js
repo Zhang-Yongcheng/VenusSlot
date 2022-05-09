@@ -65,13 +65,13 @@ const handleGameCommand = (function () {
         
         break;
       case 3076: //　特殊卡牌
-      cc.store.cardRatio = vals[1];
-      cc.store.cardcnts = vals[2];
-      //cc.find('Canvas/Game/Card/ProgressBar').getComponent(cc.ProgressBar).progress = cc.store.cardRatio;
-      cc.find('Canvas/Game/Card/cardback/Value').getComponent(cc.Label).string = cc.store.cardcnts;
-      if(cc.store.cardcnts==0){
-        cc.find('Canvas/Game/Card/ProgressBar').active=false;
-      }
+        cc.store.cardRatio = vals[1];
+        cc.store.cardcnts = vals[2];
+        //cc.find('Canvas/Game/Card/ProgressBar').getComponent(cc.ProgressBar).progress = cc.store.cardRatio;
+        cc.find('Canvas/Game/Card/cardback/Value').getComponent(cc.Label).string = cc.store.cardcnts;
+        if(cc.store.cardcnts==0){
+          cc.find('Canvas/Game/Card/ProgressBar').active=false;
+        }
         break;
     }
   };

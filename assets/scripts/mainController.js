@@ -20,7 +20,6 @@ cc.Class({
 
   onLoad() {
     // co.enableAutoTick(30);
-    //PublicSetUp.audio1 = this.AudioClip[0];
     for (let i = 0; i < this.AudioClip.length; i++) {
       PublicSetUp.audio[this.AudioClip[i].name] = this.AudioClip[i];
   }

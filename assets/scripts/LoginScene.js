@@ -30,7 +30,6 @@ cc.Class({
     start () {
       
       
-  
       //Token登入
       var getUrlString = location.href;
       var url = new URL(getUrlString);   

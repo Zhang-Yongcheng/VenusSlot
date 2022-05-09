@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "groove-bottom",
+    "texture": "3b1f99cd-1b7b-4cfb-9cd4-a56c386c11a6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      405,
+      51
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      405,
+      51
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

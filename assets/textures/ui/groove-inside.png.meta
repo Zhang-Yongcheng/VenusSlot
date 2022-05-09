@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "f31f8594-de36-4f30-8574-b6a4968790fa",
+  "uuid": "a3e3aded-3be0-4bec-91f3-ea7e56277f91",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -14,9 +14,9 @@
   "subMetas": {
     "groove-inside": {
       "ver": "1.0.6",
-      "uuid": "3a1c0614-c535-4aa4-a250-1a75f551644f",
+      "uuid": "104b77f4-0cab-4d16-911f-04e0fca1488b",
       "importer": "sprite-frame",
-      "rawTextureUuid": "f31f8594-de36-4f30-8574-b6a4968790fa",
+      "rawTextureUuid": "a3e3aded-3be0-4bec-91f3-ea7e56277f91",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

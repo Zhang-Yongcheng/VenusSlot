@@ -106,9 +106,9 @@ if(PublicSetUp.sound==1){
     }
   }
   
-  //
-  let heartObj=cc.find('Canvas/Game/heartPanel').getComponent("heart");
-  heartObj.show(heart);
+
+    let heartObj=cc.find('Canvas/Game/heartPanel').getComponent("heart");
+    heartObj.show(heart);
 
 
     if(VideoIdx!=null && VideoIdx!=0){
