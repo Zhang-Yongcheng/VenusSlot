@@ -1071,7 +1071,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        3,
+        20,
         -23,
         0,
         0,
@@ -14608,8 +14608,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 900,
-      "height": 440
+      "width": 696,
+      "height": 414
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -14620,8 +14620,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        13,
+        1,
+        18,
         0,
         0,
         0,
@@ -19862,7 +19862,7 @@
     "_lineHeight": 20,
     "_enableWrapText": false,
     "_N$file": {
-      "__uuid__": "f9d67196-8df7-419e-809c-9a3a551c3882"
+      "__uuid__": "dd64dd88-bae3-49f3-91cb-45cb78de58b8"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
@@ -22477,7 +22477,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 405,
-      "height": 51
+      "height": 34
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -22540,8 +22540,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 383,
-      "height": 31
+      "width": 384,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -22553,7 +22553,7 @@
       "ctor": "Float64Array",
       "array": [
         -191.907,
-        0.969,
+        0.469,
         0,
         0,
         0,
@@ -22593,7 +22593,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "104b77f4-0cab-4d16-911f-04e0fca1488b"
+      "__uuid__": "0dc5bb6d-a40d-4b15-8efe-705ff1f60535"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -22636,10 +22636,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "5ac48844-423d-4f62-9b4f-2c865294b8ed"
+      "__uuid__": "40cb56f1-f4da-4aee-aa9e-01194b254f2d"
     },
     "_type": 1,
-    "_sizeMode": 2,
+    "_sizeMode": 1,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -22833,7 +22833,7 @@
     "_lineHeight": 40,
     "_enableWrapText": false,
     "_N$file": {
-      "__uuid__": "f9d67196-8df7-419e-809c-9a3a551c3882"
+      "__uuid__": "dd64dd88-bae3-49f3-91cb-45cb78de58b8"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,

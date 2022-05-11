@@ -10,6 +10,8 @@ exports["default"] = void 0;
 var handleGameCommand = function () {
   var first3072 = true;
   return function handleGameCommand(vals, pi, gameObj) {
+    if (vals[0] != 3075) {}
+
     console.log("--%o", vals);
 
     switch (vals[0]) {
@@ -69,7 +71,8 @@ var handleGameCommand = function () {
       case 3075:
         //　jackpot點數
         cc.store.cardPot = vals[1];
-        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = cc.store.cardPot;
+        var num = vals[1];
+        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = Math.round((num + Number.EPSILON) * 100) / 100;
         break;
 
       case 3076:
