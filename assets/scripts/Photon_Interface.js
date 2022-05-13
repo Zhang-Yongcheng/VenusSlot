@@ -90,7 +90,7 @@ var PhotonController;
       for (var i = 0; i < args.length; ++i) {
         op.push(i + 1, args[i]);
       }
-      console.log('send cmd'+op);
+      console.log('send cmd:'+op[0,1]);
       this._ppr.sendOperation(1, op);
     };
 

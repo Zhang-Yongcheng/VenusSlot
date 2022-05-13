@@ -105,6 +105,11 @@ if(PublicSetUp.sound==1){
       
     }
   }
+
+  if(cc.store.cardRatio>=1 && cc.store.cardcnts>=1){
+    let cardObj=cc.find('Canvas/Game/Card/cardback').getComponent("card");
+    cardObj.show();
+  }
   
 
     let heartObj=cc.find('Canvas/Game/heartPanel').getComponent("heart");
@@ -115,6 +120,10 @@ if(PublicSetUp.sound==1){
       yield playVideo('index',VideoIdx);
     }
 
+
+    if(freeGameNCnts[0]==2){
+      yield playVideo('card',1);
+    }
     //freeSpin
     let anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim");
     if(freeGameNCnts[0]==1 && cc.store.type==0){

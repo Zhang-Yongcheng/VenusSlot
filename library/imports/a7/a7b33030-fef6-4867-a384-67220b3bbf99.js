@@ -282,9 +282,8 @@ var BaseCmdLogic;
           }
 
           break;
-      }
+      } //console.log('ls response, cmd:' + vals[0]);
 
-      console.log('ls response, cmd:' + vals[0]);
     }; //photon peer event callback function
 
 
@@ -317,7 +316,7 @@ var BaseCmdLogic;
 
 
     GameSrvBaseCmdLogic.prototype.ConnectToServer = function (loginId, loginKey, protocolType, ip, port) {
-      console.log('connect to gs loginId:' + loginId + ', loginKey:' + loginKey + ', protocolType:' + protocolType + ', ip:' + ip + ', port:' + port);
+      //console.log('connect to gs loginId:' + loginId + ', loginKey:' + loginKey + ', protocolType:' + protocolType + ', ip:' + ip + ', port:' + port);
       this._loginId = loginId;
       this._loginKey = loginKey; //目前只會有 WebSocket 或 SecureWebSocket 兩種 protocol
 
@@ -351,7 +350,9 @@ var BaseCmdLogic;
 
 
     GameSrvBaseCmdLogic.prototype.ResponseCallback = function (vals, selfObj) {
-      console.log('gs response, cmd:' + vals[0]);
+      if (vals[0] != 3075) {
+        console.log('gs response, cmd:' + vals[0] + "--%o", vals);
+      }
 
       switch (vals[0]) {
         case 111:

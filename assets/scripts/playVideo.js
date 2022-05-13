@@ -32,8 +32,16 @@ const playVideo = (function () {
           }
           cc.find('Canvas/Game/Machine/Particle_coin').active=true;
         }
+        if(name!='JACKPOT'){
+          cc.find('Canvas/Game/Machine/VideoFrame').active=true;
+        }else{
+          if(PublicSetUp.sound==1){
+            
+            cc.audioEngine.playEffect(PublicSetUp.audio["0021"], false);
+            
+          }
+        }
         
-        cc.find('Canvas/Game/Machine/VideoFrame').active=true;
       });
 
       videoPlayerNode.on('error', onDone);
@@ -54,6 +62,8 @@ const playVideo = (function () {
     }else if(name === 'index'){
 
       name = String(index);
+    }else if(name=='card'){
+      name = 'JACKPOT';
     }
 
     let clip = videoBundle.get(name, cc.VideoClip);

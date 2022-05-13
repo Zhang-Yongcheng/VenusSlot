@@ -101,7 +101,7 @@ var PhotonController;
         op.push(i + 1, i + 1 < 1 || arguments.length <= i + 1 ? undefined : arguments[i + 1]);
       }
 
-      console.log('send cmd' + op);
+      console.log('send cmd:' + op[(0, 1)]);
 
       this._ppr.sendOperation(1, op);
     };

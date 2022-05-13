@@ -10,9 +10,8 @@ exports["default"] = void 0;
 var handleGameCommand = function () {
   var first3072 = true;
   return function handleGameCommand(vals, pi, gameObj) {
-    if (vals[0] != 3075) {}
-
-    console.log("--%o", vals);
+    if (vals[0] != 3075) {//console.log("--%o",vals);
+    }
 
     switch (vals[0]) {
       case 3072:
@@ -48,8 +47,7 @@ var handleGameCommand = function () {
           gameResult.WinTotalPoint = vals[7];
           cc.store.userPoints = vals[8];
           gameResult.heart = vals[9];
-          gameResult.VideoIdx = vals[10];
-          console.log('--' + gameResult.freeGameNCnts); // console.log(vals[3]);
+          gameResult.VideoIdx = vals[10]; // console.log(vals[3]);
           // console.log(vals[4]);
 
           if (gameResult.iGrid.some(function (val) {
@@ -75,15 +73,19 @@ var handleGameCommand = function () {
         cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = Math.round((num + Number.EPSILON) * 100) / 100;
         break;
 
-      case 3076:
+      case 3181:
         //　特殊卡牌
         cc.store.cardRatio = vals[1];
-        cc.store.cardcnts = vals[2]; //cc.find('Canvas/Game/Card/ProgressBar').getComponent(cc.ProgressBar).progress = cc.store.cardRatio;
-
+        cc.store.cardcnts = vals[2];
+        cc.find('Canvas/Game/Card/ProgressBar').getComponent(cc.ProgressBar).progress = cc.store.cardRatio;
         cc.find('Canvas/Game/Card/cardback/Value').getComponent(cc.Label).string = cc.store.cardcnts;
 
         if (cc.store.cardcnts == 0) {
           cc.find('Canvas/Game/Card/ProgressBar').active = false;
+          cc.find('Canvas/Game/Card/cardback').active = false;
+        } else {
+          cc.find('Canvas/Game/Card/ProgressBar').active = true;
+          cc.find('Canvas/Game/Card/cardback').active = true;
         }
 
         break;

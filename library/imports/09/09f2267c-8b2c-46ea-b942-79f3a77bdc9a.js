@@ -22,7 +22,7 @@ var _marked = /*#__PURE__*/regeneratorRuntime.mark(playAll);
 var PublicSetUp = require('PublicSetUp');
 
 function playAll() {
-  var addFloat, mulFloat, cols, _loop, i, _cc$store$gameResult, type, iLine, iFrame, freeGameNCnts, WinPointLine, WinTotalPoint, heart, VideoIdx, lastLine, _i, score, _i2, lines, _loop2, _i3, heartObj, anim, _total;
+  var addFloat, mulFloat, cols, _loop, i, _cc$store$gameResult, type, iLine, iFrame, freeGameNCnts, WinPointLine, WinTotalPoint, heart, VideoIdx, lastLine, _i, score, _i2, lines, _loop2, _i3, cardObj, heartObj, anim, _total;
 
   return regeneratorRuntime.wrap(function playAll$(_context3) {
     while (1) {
@@ -203,23 +203,37 @@ function playAll() {
           }
 
         case 41:
+          if (cc.store.cardRatio >= 1 && cc.store.cardcnts >= 1) {
+            cardObj = cc.find('Canvas/Game/Card/cardback').getComponent("card");
+            cardObj.show();
+          }
+
           heartObj = cc.find('Canvas/Game/heartPanel').getComponent("heart");
           heartObj.show(heart);
 
           if (!(VideoIdx != null && VideoIdx != 0)) {
-            _context3.next = 46;
+            _context3.next = 47;
             break;
           }
 
-          _context3.next = 46;
+          _context3.next = 47;
           return (0, _playVideo["default"])('index', VideoIdx);
 
-        case 46:
+        case 47:
+          if (!(freeGameNCnts[0] == 2)) {
+            _context3.next = 50;
+            break;
+          }
+
+          _context3.next = 50;
+          return (0, _playVideo["default"])('card', 1);
+
+        case 50:
           //freeSpin
           anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim");
 
           if (!(freeGameNCnts[0] == 1 && cc.store.type == 0)) {
-            _context3.next = 56;
+            _context3.next = 60;
             break;
           }
 
@@ -234,15 +248,15 @@ function playAll() {
 
           cc.store.auto = true;
           anim.play();
-          _context3.next = 53;
+          _context3.next = 57;
           return _co["default"].waitForSeconds(3.1);
 
-        case 53:
+        case 57:
           cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[1];
-          _context3.next = 57;
+          _context3.next = 61;
           break;
 
-        case 56:
+        case 60:
           if (type == 2) {
             //如果目前是免費遊戲
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[2];
@@ -255,9 +269,9 @@ function playAll() {
             }
           }
 
-        case 57:
+        case 61:
           if (!(cc.store.type == 1)) {
-            _context3.next = 65;
+            _context3.next = 69;
             break;
           }
 
@@ -268,10 +282,10 @@ function playAll() {
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = cc.store.FreeTotalPoint;
           }
 
-          _context3.next = 62;
+          _context3.next = 66;
           return _co["default"].waitForSeconds(2);
 
-        case 62:
+        case 66:
           anim.UIOff();
           PublicSetUp.freeSpinTotal = 0;
 
@@ -279,12 +293,12 @@ function playAll() {
             cc.store.auto = false;
           }
 
-        case 65:
+        case 69:
           cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0; // update user points
 
           cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints;
 
-        case 67:
+        case 71:
         case "end":
           return _context3.stop();
       }

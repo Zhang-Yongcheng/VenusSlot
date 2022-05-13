@@ -241,7 +241,7 @@ var BaseCmdLogic;
           }
           break;
       }
-      console.log('ls response, cmd:' + vals[0]);
+      //console.log('ls response, cmd:' + vals[0]);
     };
 
     //photon peer event callback function
@@ -271,7 +271,7 @@ var BaseCmdLogic;
 
     //connect to game server
     GameSrvBaseCmdLogic.prototype.ConnectToServer = function (loginId, loginKey, protocolType, ip, port) {
-      console.log('connect to gs loginId:' + loginId + ', loginKey:' + loginKey + ', protocolType:' + protocolType + ', ip:' + ip + ', port:' + port);
+      //console.log('connect to gs loginId:' + loginId + ', loginKey:' + loginKey + ', protocolType:' + protocolType + ', ip:' + ip + ', port:' + port);
       this._loginId = loginId;
       this._loginKey = loginKey;
       //目前只會有 WebSocket 或 SecureWebSocket 兩種 protocol
@@ -300,7 +300,10 @@ var BaseCmdLogic;
 
     //photon peer reponse callback function
     GameSrvBaseCmdLogic.prototype.ResponseCallback = function (vals, selfObj) {
-      console.log('gs response, cmd:' + vals[0]);
+      if(vals[0]!=3075){
+        console.log('gs response, cmd:'+vals[0]+"--%o",vals);
+      }
+      
       switch (vals[0]) {
         case 111: //收到game遊戲局已經準備完成的訊息（只會有一次）
           selfObj._pi.sendData(3161); //送出3161，取得本桌的資訊(通知server前端遊戲已經準備就緒)
@@ -329,6 +332,7 @@ var BaseCmdLogic;
     //set game cmd function
     GameSrvBaseCmdLogic.prototype.SetGameCmdFunc = function (FuncObj) {
       this._GameCmdFuncObj = FuncObj;
+      
     };
 
     //Get Photon Interface object

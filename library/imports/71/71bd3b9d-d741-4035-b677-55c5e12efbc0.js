@@ -13,13 +13,13 @@ cc.Class({
       var currentBet = parseFloat(currentBetValue.string);
 
       if (currentBet > cc.store.minBet && currentBet <= cc.store.maxBet) {
-        if (currentBet <= 1) {
-          currentBetValue.string = cc.store.currentBet = parseFloat((currentBet - 0.1).toPrecision(12));
-        } else if (currentBet <= 10) {
-          currentBetValue.string = cc.store.currentBet = currentBet - 1;
-        } else {
-          currentBetValue.string = cc.store.currentBet = currentBet - 10;
-        }
+        currentBetValue.string = cc.store.currentBet = currentBet - 10; // if(currentBet<=1){
+        //   currentBetValue.string = cc.store.currentBet = parseFloat((currentBet - 0.1).toPrecision(12)) ;
+        // }else if(currentBet<=10){
+        //   currentBetValue.string = cc.store.currentBet = currentBet - 1;
+        // }else{
+        //   currentBetValue.string = cc.store.currentBet = currentBet - 10;
+        // }
       }
     });
   }

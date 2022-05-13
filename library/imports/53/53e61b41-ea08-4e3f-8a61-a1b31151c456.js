@@ -103,8 +103,8 @@ var requestGameResult = function () {
       (_cc$store2 = cc.store) == null ? void 0 : _cc$store2.gameServer.GetPI().sendData(3162, 0);
     }
 
-    cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints - cc.store.currentBet;
-    console.log(3162);
+    cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints - cc.store.currentBet; //console.log(3162);
+
     coGroup.start( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       var colIndex, col, colsBox, byeond;
       return regeneratorRuntime.wrap(function _callee2$(_context2) {

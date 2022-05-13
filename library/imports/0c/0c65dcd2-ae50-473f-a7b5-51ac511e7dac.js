@@ -60,7 +60,13 @@ var playVideo = function () {
                 cc.find('Canvas/Game/Machine/Particle_coin').active = true;
               }
 
-              cc.find('Canvas/Game/Machine/VideoFrame').active = true;
+              if (name != 'JACKPOT') {
+                cc.find('Canvas/Game/Machine/VideoFrame').active = true;
+              } else {
+                if (PublicSetUp.sound == 1) {
+                  cc.audioEngine.playEffect(PublicSetUp.audio["0021"], false);
+                }
+              }
             });
             videoPlayerNode.on('error', onDone);
             videoPlayerNode.on('completed', onDone);
@@ -86,6 +92,8 @@ var playVideo = function () {
               name = list[Math.floor(Math.random() * list.length)];
             } else if (name === 'index') {
               name = String(index);
+            } else if (name == 'card') {
+              name = 'JACKPOT';
             }
 
             clip = videoBundle.get(name, cc.VideoClip);

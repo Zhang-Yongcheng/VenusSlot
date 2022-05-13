@@ -67,6 +67,7 @@ cc.Class({
       }
     });
 
+
     cc.find('Canvas/Game').active = false;
     var getUrlString = location.href;
     var url = new URL(getUrlString);  
