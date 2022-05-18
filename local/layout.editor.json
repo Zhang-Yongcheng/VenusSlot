@@ -6,20 +6,20 @@
       "url": "app://editor/index.html",
       "windowType": "dockable",
       "x": -8,
-      "y": 177,
-      "width": 1920,
-      "height": 1040,
+      "y": -8,
+      "width": 1936,
+      "height": 1056,
       "layout": {
         "type": "dock-h",
         "children": [
           {
-            "width": 204,
-            "height": 922,
+            "width": 205.71875,
+            "height": 935.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 204,
-                "height": 468,
+                "width": 205.71875,
+                "height": 474.875,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 204,
-                "height": 451,
+                "width": 205.71875,
+                "height": 457.625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,13 +38,13 @@
             ]
           },
           {
-            "width": 1144,
-            "height": 922,
+            "width": 1153.640625,
+            "height": 935.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 1144,
-                "height": 651,
+                "width": 1153.640625,
+                "height": 660.5625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -52,8 +52,8 @@
                 ]
               },
               {
-                "width": 1144,
-                "height": 268,
+                "width": 1153.640625,
+                "height": 271.9375,
                 "type": "panel",
                 "active": 1,
                 "children": [
@@ -65,8 +65,8 @@
             ]
           },
           {
-            "width": 550,
-            "height": 922,
+            "width": 554.640625,
+            "height": 935.5,
             "type": "panel",
             "active": 0,
             "children": [
