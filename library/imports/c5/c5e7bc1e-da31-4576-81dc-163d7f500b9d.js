@@ -34,17 +34,19 @@ cc.Class({
   start: function start() {
     self = this;
     cc.find('Canvas/Game/score/1').active = false;
+    cc.find('Canvas/Game/score/2').active = false;
+    cc.find('Canvas/Game/score/3').active = false;
   },
-  run: function run(score) {
-    var scoreLab = cc.find('Canvas/Game/score/1');
+  run: function run(num, score) {
+    var scoreLab = cc.find('Canvas/Game/score/' + num);
     scoreLab.getComponent(cc.Label).string = "+" + score;
-    cc.tween(scoreLab).call(function () {
-      scoreLab.active = true;
-    }).to(0, {
+    scoreLab.active = true;
+    cc.tween(scoreLab) //.call(() => {  })
+    .to(0, {
       position: cc.v2(-100, 130)
     }).to(1, {
       position: cc.v2(-100, 245)
-    }).delay(0.5).call(function () {
+    }).delay(1).call(function () {
       scoreLab.active = false;
     }).start();
   } // update (dt) {},

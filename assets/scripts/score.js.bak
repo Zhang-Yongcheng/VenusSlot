@@ -41,6 +41,7 @@ cc.Class({
 
         let scoreLab = cc.find('Canvas/Game/score/'+num);
         scoreLab.getComponent(cc.Label).string="+"+score;
+        console.log('-----'+score);
         scoreLab.active=true;
         cc.tween(scoreLab)
             //.call(() => {  })

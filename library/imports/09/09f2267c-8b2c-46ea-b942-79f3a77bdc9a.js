@@ -22,7 +22,7 @@ var _marked = /*#__PURE__*/regeneratorRuntime.mark(playAll);
 var PublicSetUp = require('PublicSetUp');
 
 function playAll() {
-  var addFloat, mulFloat, cols, _loop, i, _cc$store$gameResult, type, iLine, iFrame, freeGameNCnts, WinPointLine, WinTotalPoint, heart, VideoIdx, lastLine, _i, score, _i2, lines, _loop2, _i3, cardObj, heartObj, anim, _total;
+  var addFloat, mulFloat, cols, _loop, i, _cc$store$gameResult, type, iLine, iFrame, freeGameNCnts, WinPointLine, WinTotalPoint, heart, VideoIdx, lastLine, _i, score, t, _i2, lines, _loop2, _i3, cardObj, heartObj, anim, _total;
 
   return regeneratorRuntime.wrap(function playAll$(_context3) {
     while (1) {
@@ -124,39 +124,46 @@ function playAll() {
           score = cc.find('Canvas/Game/score').getComponent("score");
 
           if (!(lastLine > -1)) {
-            _context3.next = 41;
+            _context3.next = 44;
             break;
           }
 
+          t = 1;
           _i2 = 0;
 
-        case 21:
+        case 22:
           if (!(_i2 < 9)) {
-            _context3.next = 31;
+            _context3.next = 34;
             break;
           }
 
           if (!(iLine[_i2] === 1)) {
-            _context3.next = 28;
+            _context3.next = 31;
             break;
           }
 
           cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinPointLine[_i2];
-          score.run(cc.store.gameResult.WinPointLine[_i2]);
+
+          if (t > 3) {
+            t = 1;
+          }
+
+          score.run(t, cc.store.gameResult.WinPointLine[_i2]);
+          t++;
 
           if (PublicSetUp.sound == 1) {
             cc.audioEngine.playEffect(PublicSetUp.audio["0022"], false);
           }
 
-          _context3.next = 28;
+          _context3.next = 31;
           return (0, _playLine["default"])(_i2, iFrame[_i2], true, _i2 === lastLine, 4.5, 1000);
 
-        case 28:
+        case 31:
           _i2++;
-          _context3.next = 21;
+          _context3.next = 22;
           break;
 
-        case 31:
+        case 34:
           // 3
           lines = [];
 
@@ -185,24 +192,24 @@ function playAll() {
           }
 
           cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinTotalPoint;
-          _context3.next = 37;
+          _context3.next = 40;
           return _co["default"].waitForAll(lines);
 
-        case 37:
+        case 40:
           if (!(lines.length >= 2)) {
-            _context3.next = 41;
+            _context3.next = 44;
             break;
           }
 
-          _context3.next = 40;
+          _context3.next = 43;
           return (0, _playVideo["default"])('random', 0);
 
-        case 40:
+        case 43:
           if (PublicSetUp.sound == 1) {
             cc.audioEngine.playMusic(PublicSetUp.MusicClip, true);
           }
 
-        case 41:
+        case 44:
           if (cc.store.cardRatio >= 1 && cc.store.cardcnts >= 1) {
             cardObj = cc.find('Canvas/Game/Card/cardback').getComponent("card");
             cardObj.show();
@@ -212,28 +219,28 @@ function playAll() {
           heartObj.show(heart);
 
           if (!(VideoIdx != null && VideoIdx != 0)) {
-            _context3.next = 47;
-            break;
-          }
-
-          _context3.next = 47;
-          return (0, _playVideo["default"])('index', VideoIdx);
-
-        case 47:
-          if (!(freeGameNCnts[0] == 2)) {
             _context3.next = 50;
             break;
           }
 
           _context3.next = 50;
-          return (0, _playVideo["default"])('card', 1);
+          return (0, _playVideo["default"])('index', VideoIdx);
 
         case 50:
+          if (!(freeGameNCnts[0] == 2)) {
+            _context3.next = 53;
+            break;
+          }
+
+          _context3.next = 53;
+          return (0, _playVideo["default"])('card', 1);
+
+        case 53:
           //freeSpin
           anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim");
 
           if (!(freeGameNCnts[0] == 1 && cc.store.type == 0)) {
-            _context3.next = 60;
+            _context3.next = 63;
             break;
           }
 
@@ -248,15 +255,15 @@ function playAll() {
 
           cc.store.auto = true;
           anim.play();
-          _context3.next = 57;
+          _context3.next = 60;
           return _co["default"].waitForSeconds(3.1);
 
-        case 57:
+        case 60:
           cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[1];
-          _context3.next = 61;
+          _context3.next = 64;
           break;
 
-        case 60:
+        case 63:
           if (type == 2) {
             //如果目前是免費遊戲
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[2];
@@ -269,9 +276,9 @@ function playAll() {
             }
           }
 
-        case 61:
+        case 64:
           if (!(cc.store.type == 1)) {
-            _context3.next = 69;
+            _context3.next = 72;
             break;
           }
 
@@ -282,10 +289,10 @@ function playAll() {
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = cc.store.FreeTotalPoint;
           }
 
-          _context3.next = 66;
+          _context3.next = 69;
           return _co["default"].waitForSeconds(2);
 
-        case 66:
+        case 69:
           anim.UIOff();
           PublicSetUp.freeSpinTotal = 0;
 
@@ -293,12 +300,12 @@ function playAll() {
             cc.store.auto = false;
           }
 
-        case 69:
+        case 72:
           cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0; // update user points
 
           cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints;
 
-        case 71:
+        case 74:
         case "end":
           return _context3.stop();
       }

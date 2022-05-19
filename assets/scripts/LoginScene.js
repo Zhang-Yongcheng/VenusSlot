@@ -45,8 +45,8 @@ cc.Class({
         let passwordEditBox = cc.find("Canvas/Login/Password").getComponent(cc.EditBox);
         let message = cc.find("Canvas/Login/message").getComponent(cc.Label);
 
-        //accountEditBox.string='gtest001';
-        //passwordEditBox.string='gtest001';
+        accountEditBox.string='gtest001';
+        passwordEditBox.string='gtest001';
         const okButton = cc.find("Canvas/Login/Ok").getComponent(cc.Button);
 
         okButton.node.on('click', () => {

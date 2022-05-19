@@ -36,9 +36,9 @@ cc.Class({
 
     var accountEditBox = cc.find("Canvas/Login/Account").getComponent(cc.EditBox);
     var passwordEditBox = cc.find("Canvas/Login/Password").getComponent(cc.EditBox);
-    var message = cc.find("Canvas/Login/message").getComponent(cc.Label); //accountEditBox.string='gtest001';
-    //passwordEditBox.string='gtest001';
-
+    var message = cc.find("Canvas/Login/message").getComponent(cc.Label);
+    accountEditBox.string = 'gtest001';
+    passwordEditBox.string = 'gtest001';
     var okButton = cc.find("Canvas/Login/Ok").getComponent(cc.Button);
     okButton.node.on('click', function () {
       if (accountEditBox.string.length === 0 || passwordEditBox.string.length === 0) {

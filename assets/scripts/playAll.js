@@ -63,11 +63,15 @@ if(PublicSetUp.sound==1){
   }
   let score=cc.find('Canvas/Game/score').getComponent("score");
   if (lastLine > -1) {
+    let t =1;
     for (let i = 0; i < 9; i++) {
       if (iLine[i] === 1) {
         cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinPointLine[i];
-
-        score.run(cc.store.gameResult.WinPointLine[i]);
+        if(t>3){
+          t=1;
+        }
+        score.run(t,cc.store.gameResult.WinPointLine[i]);
+        t++;
         if(PublicSetUp.sound==1){
             
           cc.audioEngine.playEffect(PublicSetUp.audio["0022"], false);
