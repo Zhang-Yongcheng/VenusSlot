@@ -4,6 +4,8 @@ cc._RF.push(module, 'f2aafML1QxASK398CLTW68w', 'incBetButton');
 
 "use strict";
 
+var isTouch;
+var touchTime;
 cc.Class({
   "extends": cc.Component,
   onLoad: function onLoad() {
@@ -22,6 +24,39 @@ cc.Class({
         // }
       }
     });
+    isTouch = false;
+    touchTime = null;
+    button.node.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
+    button.node.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
+  },
+  touchStart: function touchStart() {
+    isTouch = true;
+    touchTime = new Date();
+  },
+  touchHold: function touchHold() {
+    if (isTouch && touchTime != null) {
+      var touchHoldTime = new Date();
+      var millisecons = touchHoldTime.getTime() - touchTime.getTime();
+
+      if (millisecons > 300) {
+        isTouch = true;
+        var currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
+        var currentBet = parseFloat(currentBetValue.string);
+
+        if (currentBet >= cc.store.minBet && currentBet < cc.store.maxBet) {
+          currentBetValue.string = cc.store.currentBet = currentBet + 10;
+        }
+      }
+    }
+  },
+  touchEnd: function touchEnd() {
+    isTouch = false;
+    touchTime = null;
+  },
+  update: function update() {
+    if (isTouch) {
+      this.touchHold();
+    }
   }
 });
 
