@@ -23,7 +23,8 @@ cc.Class({
     // });
   },
   start: function start() {
-    //Token登入
+    document.oncontextmenu = new Function("return false"); //Token登入
+
     var getUrlString = location.href;
     var url = new URL(getUrlString);
 
