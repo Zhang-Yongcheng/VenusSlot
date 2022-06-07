@@ -57,7 +57,7 @@ const playVideo = (function () {
     }
 
     if (name === 'random') {
-      const list = ['LINE_MOVIE_1643105941778', 'LINE_MOVIE_1643105948791'];
+      const list = ['LINE_MOVIE_1643105946757', 'LINE_MOVIE_1643288149416','LINE_MOVIE_1643288159743'];
       name = list[Math.floor(Math.random() * list.length)];
     }else if(name === 'index'){
 

@@ -88,7 +88,7 @@ var playVideo = function () {
 
           case 11:
             if (name === 'random') {
-              list = ['LINE_MOVIE_1643105941778', 'LINE_MOVIE_1643105948791'];
+              list = ['LINE_MOVIE_1643105946757', 'LINE_MOVIE_1643288149416', 'LINE_MOVIE_1643288159743'];
               name = list[Math.floor(Math.random() * list.length)];
             } else if (name === 'index') {
               name = String(index);

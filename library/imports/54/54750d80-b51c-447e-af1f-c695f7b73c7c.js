@@ -19,7 +19,7 @@ var handleGameCommand = function () {
         if (first3072 === true) {
           first3072 = false;
           cc.store.userPoints = vals[4];
-          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints;
+          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
           cc.store.maxBet = vals[2];
           cc.store.minBet = cc.store.currentBet = vals[3];
           cc.store.gameResult.iGrid = vals[8];
@@ -70,7 +70,7 @@ var handleGameCommand = function () {
         //　jackpot點數
         cc.store.cardPot = vals[1];
         var num = vals[1];
-        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = Math.round((num + Number.EPSILON) * 100) / 100;
+        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = Math.floor(Math.round((num + Number.EPSILON) * 100) / 100);
         break;
 
       case 3181:

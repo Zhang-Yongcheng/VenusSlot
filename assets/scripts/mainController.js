@@ -59,6 +59,7 @@ cc.Class({
   },
 
   start() {
+    document.oncontextmenu = new Function("return false");
     cc.audioEngine.playMusic(this.MusicClip, true);
 
     cc.assetManager.loadBundle('mp4', (error, bundle) => {

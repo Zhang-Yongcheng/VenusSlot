@@ -142,13 +142,13 @@ function playAll() {
             break;
           }
 
-          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinPointLine[_i2];
+          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinPointLine[_i2]);
 
           if (t > 3) {
             t = 1;
           }
 
-          score.run(t, cc.store.gameResult.WinPointLine[_i2]);
+          score.run(t, Math.floor(cc.store.gameResult.WinPointLine[_i2]));
           t++;
 
           if (PublicSetUp.sound == 1) {
@@ -191,7 +191,7 @@ function playAll() {
             _loop2(_i3);
           }
 
-          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinTotalPoint;
+          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinTotalPoint);
           _context3.next = 40;
           return _co["default"].waitForAll(lines);
 
@@ -269,7 +269,7 @@ function playAll() {
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[2];
             _total = addFloat(PublicSetUp.freeSpinTotal, cc.store.gameResult.WinTotalPoint);
             PublicSetUp.freeSpinTotal = _total;
-            cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = PublicSetUp.freeSpinTotal;
+            cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = Math.floor(PublicSetUp.freeSpinTotal);
 
             if (freeGameNCnts[2] == 0) {
               cc.store.type = 1;
@@ -286,7 +286,7 @@ function playAll() {
           cc.store.type = 0;
 
           if (cc.store.FreeTotalPoint != null) {
-            cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = cc.store.FreeTotalPoint;
+            cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = Math.floor(cc.store.FreeTotalPoint);
           }
 
           _context3.next = 69;
@@ -303,7 +303,7 @@ function playAll() {
         case 72:
           cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0; // update user points
 
-          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints;
+          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
 
         case 74:
         case "end":

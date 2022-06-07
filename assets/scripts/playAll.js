@@ -66,11 +66,11 @@ if(PublicSetUp.sound==1){
     let t =1;
     for (let i = 0; i < 9; i++) {
       if (iLine[i] === 1) {
-        cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinPointLine[i];
+        cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinPointLine[i]);
         if(t>3){
           t=1;
         }
-        score.run(t,cc.store.gameResult.WinPointLine[i]);
+        score.run(t,Math.floor(cc.store.gameResult.WinPointLine[i]));
         t++;
         if(PublicSetUp.sound==1){
             
@@ -93,7 +93,7 @@ if(PublicSetUp.sound==1){
         );
       }
     }
-    cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = cc.store.gameResult.WinTotalPoint;
+    cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinTotalPoint);
 
     yield co.waitForAll(lines);
 
@@ -151,7 +151,7 @@ if(PublicSetUp.sound==1){
       cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string=freeGameNCnts[2];
       let _total =addFloat(PublicSetUp.freeSpinTotal,cc.store.gameResult.WinTotalPoint);    
       PublicSetUp.freeSpinTotal=_total;
-      cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=PublicSetUp.freeSpinTotal;
+      cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=Math.floor(PublicSetUp.freeSpinTotal);
       if(freeGameNCnts[2]==0){
         cc.store.type=1;
       }
@@ -161,7 +161,7 @@ if(PublicSetUp.sound==1){
       //最後一次
       cc.store.type=0;
       if(cc.store.FreeTotalPoint!=null){
-        cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=cc.store.FreeTotalPoint;
+        cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string=Math.floor(cc.store.FreeTotalPoint);
       }
       
       yield co.waitForSeconds(2);     
@@ -177,5 +177,5 @@ if(PublicSetUp.sound==1){
   cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0;
 
   // update user points
-  cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints;
+  cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
 }

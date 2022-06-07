@@ -14,6 +14,10 @@ cc.Class({
       var currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
       var currentBet = parseFloat(currentBetValue.string);
 
+      if (currentBet > cc.store.maxBet) {
+        currentBetValue.string = cc.store.maxBet;
+      }
+
       if (currentBet >= cc.store.minBet && currentBet < cc.store.maxBet) {
         currentBetValue.string = cc.store.currentBet = currentBet + 10; // if(currentBet<=0.9){
         //   currentBetValue.string = cc.store.currentBet =parseFloat((currentBet + 0.1).toPrecision(12)) ;

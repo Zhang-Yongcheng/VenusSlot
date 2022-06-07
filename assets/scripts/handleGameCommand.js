@@ -12,7 +12,7 @@ const handleGameCommand = (function () {
           first3072 = false;
 
           cc.store.userPoints = vals[4];
-          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints;
+          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
 
           cc.store.maxBet = vals[2];
           cc.store.minBet = cc.store.currentBet = vals[3];
@@ -64,7 +64,7 @@ const handleGameCommand = (function () {
       case 3075: //　jackpot點數
         cc.store.cardPot=vals[1];
         var num=vals[1];
-        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string=Math.round((num+Number.EPSILON) * 100) / 100;
+        cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string=Math.floor(Math.round((num+Number.EPSILON) * 100) / 100);
 
 
         break;
