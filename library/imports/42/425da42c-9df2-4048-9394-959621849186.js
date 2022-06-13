@@ -13,7 +13,11 @@ cc.Class({
       var currentBet = parseInt(currentBetValue.string);
 
       if (currentBet !== cc.store.maxBet) {
-        currentBetValue.string = cc.store.currentBet = cc.store.maxBet;
+        if (cc.store.userPoints >= cc.store.maxBet) {
+          currentBetValue.string = cc.store.currentBet = cc.store.maxBet;
+        } else {
+          currentBetValue.string = cc.store.currentBet = Math.floor(cc.store.userPoints);
+        }
       }
     });
   }

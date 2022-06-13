@@ -8,7 +8,8 @@ cc.Class({
       cc.store?.lobbyServer.GetPI().disconnect();
       cc.store?.mainServer.GetPI().disconnect();
       this.scheduleOnce(function() {
-        window.location.href("https://sa.bcbtop.top/");
+
+        window.location.href="https://sa.bcbtop.top/"
     }, 1);
     });
   }

@@ -131,6 +131,10 @@ var BaseCmdLogic;
 
     };
 
+    MainSrvCmdLogic.prototype.GetPI = function () {
+      return this._pi;
+    };
+
     return MainSrvCmdLogic;
   }(); //class end
 
@@ -289,6 +293,10 @@ var BaseCmdLogic;
 
     LobbySrvCmdLogic.prototype.EventCallback = function (vals, selfObj) {
       console.log('ls event, cmd:' + vals[0]);
+    };
+
+    LobbySrvCmdLogic.prototype.GetPI = function () {
+      return this._pi;
     };
 
     return LobbySrvCmdLogic;

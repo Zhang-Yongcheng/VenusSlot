@@ -301,11 +301,15 @@ function playAll() {
           }
 
         case 72:
+          if (cc.store.userPoints < cc.store.currentBet) {
+            cc.store.auto = false;
+          }
+
           cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0; // update user points
 
           cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
 
-        case 74:
+        case 75:
         case "end":
           return _context3.stop();
       }

@@ -105,7 +105,9 @@ var BaseCmdLogic;
       }
       //console.log("ms event:"+evt);
     };
-
+    MainSrvCmdLogic.prototype.GetPI = function () {
+      return this._pi;
+    };
     return MainSrvCmdLogic;
   })(); //class end
   BaseCmdLogic.MainSrvCmdLogic = MainSrvCmdLogic;
@@ -248,7 +250,9 @@ var BaseCmdLogic;
     LobbySrvCmdLogic.prototype.EventCallback = function (vals, selfObj) {
       console.log('ls event, cmd:' + vals[0]);
     };
-
+    LobbySrvCmdLogic.prototype.GetPI = function () {
+      return this._pi;
+    };
     return LobbySrvCmdLogic;
   })(); //class end
   BaseCmdLogic.LobbySrvCmdLogic = LobbySrvCmdLogic;

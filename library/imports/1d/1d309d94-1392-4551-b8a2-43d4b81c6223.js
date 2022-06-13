@@ -91,6 +91,10 @@ var PhotonController;
 
     PhotonIf.prototype.connect = function () {
       this._ppr.connect();
+    };
+
+    PhotonIf.prototype.disconnect = function () {
+      this._ppr.disconnect();
     }; //send data to server
 
 

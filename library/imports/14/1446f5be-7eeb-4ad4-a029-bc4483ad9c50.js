@@ -51,6 +51,7 @@ cc.Class({
       },
       playing: false,
       auto: false,
+      test: 0,
       canPlay: function canPlay() {
         return true;
       },

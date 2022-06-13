@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
-      "width": 1920,
-      "height": 1040,
+      "x": -1928,
+      "y": -8,
+      "width": 1936,
+      "height": 1056,
       "layout": {
         "type": "dock-h",
         "children": [
@@ -87,13 +87,12 @@
         "cocos-services"
       ]
     },
-    " common-asset-worker-worker": {},
-    "window-1654852637049": {}
+    " common-asset-worker-worker": {}
   },
   "panels": {
     "builder": {
-      "x": 342,
-      "y": 127,
+      "x": -1369,
+      "y": 166,
       "width": 516,
       "height": 739
     },

@@ -15,7 +15,7 @@ cc.Class({
       var currentBet = parseFloat(currentBetValue.string);
 
       if (currentBet < cc.store.minBet) {
-        currentBetValue.string = cc.store.minBet;
+        currentBetValue.string = cc.store.currentBet = cc.store.minBet;
       }
 
       if (currentBet > cc.store.minBet && currentBet <= cc.store.maxBet) {

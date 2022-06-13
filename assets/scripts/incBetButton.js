@@ -10,10 +10,16 @@ cc.Class({
       const currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
       const currentBet = parseFloat(currentBetValue.string);
       if(currentBet>cc.store.maxBet){
-        currentBetValue.string=cc.store.maxBet;
+        currentBetValue.string=cc.store.currentBet=cc.store.maxBet;
       }
       if (currentBet >= cc.store.minBet && currentBet < cc.store.maxBet) {
-        currentBetValue.string = cc.store.currentBet = currentBet + 10;
+        if(cc.store.userPoints>=currentBet + 10){
+          currentBetValue.string = cc.store.currentBet = currentBet + 10;
+        }else{
+          let message=cc.find('Canvas/Game/message').getComponent("message");
+          message.show(0);
+        }
+        
         // if(currentBet<=0.9){
         //   currentBetValue.string = cc.store.currentBet =parseFloat((currentBet + 0.1).toPrecision(12)) ;
         // }else if(currentBet<=9){
@@ -45,7 +51,13 @@ cc.Class({
         const currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
         const currentBet = parseFloat(currentBetValue.string);
         if (currentBet >= cc.store.minBet && currentBet < cc.store.maxBet) {
-          currentBetValue.string = cc.store.currentBet = currentBet + 10;
+          if(cc.store.userPoints>=currentBet + 10){
+            currentBetValue.string = cc.store.currentBet = currentBet + 10;
+          }else{
+            let message=cc.find('Canvas/Game/message').getComponent("message");
+            message.show(0);
+          }
+          
  
           
         }
