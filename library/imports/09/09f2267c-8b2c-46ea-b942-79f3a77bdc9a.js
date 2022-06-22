@@ -237,7 +237,7 @@ function playAll() {
 
         case 53:
           //freeSpin
-          anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim");
+          anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim"); //if(freeGameNCnts[0]==1 && cc.store.type==0){
 
           if (!(freeGameNCnts[0] == 1 && cc.store.type == 0)) {
             _context3.next = 63;

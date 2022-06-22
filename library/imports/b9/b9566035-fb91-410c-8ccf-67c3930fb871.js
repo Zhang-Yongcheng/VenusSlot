@@ -13,7 +13,6 @@ cc.Class({
     var button = this.node.getComponent(cc.Button);
     button.node.on('click', function () {
       cc.store.auto = true;
-      console.log(cc.store.auto);
       var AutoPlayButton = cc.find('Canvas/Game/Machine/UI/AutoPlayButton');
       AutoPlayButton.active = true;
       var ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/ManuaPlayButton');

@@ -130,6 +130,7 @@ if(PublicSetUp.sound==1){
     }
     //freeSpin
     let anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim");
+    //if(freeGameNCnts[0]==1 && cc.store.type==0){
     if(freeGameNCnts[0]==1 && cc.store.type==0){
       //有中免費遊戲(第一次)
       

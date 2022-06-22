@@ -2,6 +2,7 @@ let PublicSetUp=require('PublicSetUp');
 
 
 let heartcnt=[];
+let statue=[];
 let pos=[[570,292],[570,196],[570,98],[570,0],[570,-103]];
 cc.Class({
     extends: cc.Component,
@@ -33,7 +34,10 @@ cc.Class({
             heartcnt[i]=cc.find(`Canvas/Game/heartPanel/${i + 1}`);
             
         }
-        
+        for(let i=0;i<6;i++){
+            statue[i]=cc.find(`Canvas/Game/AVGirl/${i + 1}`);
+
+        }
 
         this.closeHeart();
         
@@ -41,28 +45,35 @@ cc.Class({
     },
 
     show(cnt){
-        if(cnt!=0 && heartcnt[cnt].active==false){
-            if(PublicSetUp.sound==1){
-            
-                cc.audioEngine.playEffect(PublicSetUp.audio["0012"], false);
-              }
-            heartcnt[cnt].active=true;
-            cc.tween(heartcnt[cnt])
-            .to(0,{scale:0.5,position:cc.v2(-117,-23)})
-            .to(1,{scale:1,position:cc.v2(pos[cnt][0],pos[cnt][1])})
-            .start()
+        if(cnt!=0){
+            if(heartcnt[cnt-1].active==false)
+            {
+                if(PublicSetUp.sound==1){
+                
+                    cc.audioEngine.playEffect(PublicSetUp.audio["0012"], false);
+                }
+                heartcnt[cnt-1].active=true;
+                cc.tween(heartcnt[cnt-1])
+                .to(0,{scale:0.5,position:cc.v2(-117,-23)})
+                .to(1,{scale:1,position:cc.v2(pos[cnt-1][0],pos[cnt-1][1])})
+                .start()
 
-            
-        }
-        if(cnt==0){
+            }
+            for(let i=0;i<6;i++){
+                statue[i].active=false;
+    
+            }
+            if(cnt<=5){
+                statue[cnt-1].active=true;
+            }else{
+                statue[5].active=true;
+            }
+
+        }else{
             this.closeHeart();
         }
-        // for(let i=0;i<5;i++){
-        //     heartcnt[i].active=false;
-        // }
-        // for(let i=0;i<cnt;i++){
-        //     heartcnt[i].active=true;
-        // }
+
+
 
     },
     closeHeart(){
@@ -70,6 +81,11 @@ cc.Class({
             heartcnt[i].active=false;
             heartcnt[i].setPosition(-177,-23,0);
         }
+        for(let i=0;i<6;i++){
+            statue[i].active=false;
+
+        }
+        statue[5].active=true;
     }
     // update (dt) {},
 });
