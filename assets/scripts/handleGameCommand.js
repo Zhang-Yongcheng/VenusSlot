@@ -1,7 +1,8 @@
 const handleGameCommand = (function () {
   let first3072 = true;
-
+  let PublicSetUp=require('PublicSetUp');
   return function handleGameCommand(vals, pi, gameObj) {
+    
     if(vals[0]!=3075){
       //console.log("--%o",vals);
     }
@@ -21,7 +22,7 @@ const handleGameCommand = (function () {
 
           cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label).string = cc.store.currentBet;
 
-          // console.log(vals[8]);
+          
 
           // hide login
 
@@ -65,6 +66,7 @@ const handleGameCommand = (function () {
         cc.store.userPoints = vals[2];
         break;
       case 3075: //　jackpot點數
+        PublicSetUp.timeout=0;
         cc.store.cardPot=vals[1];
         var num=vals[1];
         cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string=Math.floor(Math.round((num+Number.EPSILON) * 100) / 100);

@@ -9,4 +9,5 @@ module.exports={
     auto:0,
     freeSpinTotal:0,
     test:11,
+    timeout:0,
 }

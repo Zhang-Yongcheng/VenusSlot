@@ -9,6 +9,9 @@ exports["default"] = void 0;
 
 var handleGameCommand = function () {
   var first3072 = true;
+
+  var PublicSetUp = require('PublicSetUp');
+
   return function handleGameCommand(vals, pi, gameObj) {
     if (vals[0] != 3075) {//console.log("--%o",vals);
     }
@@ -23,8 +26,7 @@ var handleGameCommand = function () {
           cc.store.maxBet = vals[2];
           cc.store.minBet = cc.store.currentBet = vals[3];
           cc.store.gameResult.iGrid = vals[8];
-          cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label).string = cc.store.currentBet; // console.log(vals[8]);
-          // hide login
+          cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label).string = cc.store.currentBet; // hide login
           // play bg music
 
           cc.find('Canvas/LoginMessage').active = false;
@@ -68,6 +70,7 @@ var handleGameCommand = function () {
 
       case 3075:
         //　jackpot點數
+        PublicSetUp.timeout = 0;
         cc.store.cardPot = vals[1];
         var num = vals[1];
         cc.find('Canvas/Game/Machine/UI/GameJP/Value').getComponent(cc.Label).string = Math.floor(Math.round((num + Number.EPSILON) * 100) / 100);

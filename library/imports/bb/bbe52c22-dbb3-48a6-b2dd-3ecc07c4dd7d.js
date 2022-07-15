@@ -14,7 +14,8 @@ module.exports = {
   sound: 1,
   auto: 0,
   freeSpinTotal: 0,
-  test: 11
+  test: 11,
+  timeout: 0
 };
 
 cc._RF.pop();

@@ -25,7 +25,18 @@ cc.Class({
     }
   },
   onLoad: function onLoad() {
-    // co.enableAutoTick(30);
+    this.callback = function () {
+      if (PublicSetUp.timeout > 20) {
+        this.unschedule(this.callback);
+        var message = cc.find('Canvas/Game/message').getComponent("message");
+        message.show(1);
+      }
+
+      PublicSetUp.timeout++;
+    };
+
+    this.schedule(this.callback, 1); // co.enableAutoTick(30);
+
     for (var i = 0; i < this.AudioClip.length; i++) {
       PublicSetUp.audio[this.AudioClip[i].name] = this.AudioClip[i];
     }

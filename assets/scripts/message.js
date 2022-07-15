@@ -5,8 +5,10 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 let txt=[
-    '餘額不足'
+    '餘額不足',
+    '連線中斷'
 ]
+let state=-1;
 cc.Class({
     extends: cc.Component,
 
@@ -36,7 +38,18 @@ cc.Class({
            cc.find('Canvas/Game/message/OK').active=false;
            cc.find('Canvas/Game/message/bg').active=false;
            cc.find('Canvas/Game/message/txt').active=false;
+            if(state==1){
+                cc.store?.gameServer.GetPI().disconnect();
+                cc.store?.lobbyServer.GetPI().disconnect();
+                cc.store?.mainServer.GetPI().disconnect();
+                this.scheduleOnce(function() {
+          
+                  window.location.href="https://sa.bcbtop.top/"
+              }, 1);
+            }
 
+
+         state=-1;
           });
 
     },
@@ -47,11 +60,12 @@ cc.Class({
     },
     
     show(txtNum){
+        state=txtNum;
         cc.find('Canvas/Game/message/OK').active=true;
         cc.find('Canvas/Game/message/bg').active=true;
         cc.find('Canvas/Game/message/txt').active=true;
         const lab=cc.find('Canvas/Game/message/txt').getComponent(cc.Label);
-        lab.string=txt[0];
+        lab.string=txt[txtNum];
     }
 
     // update (dt) {},

@@ -213,6 +213,8 @@ function playAll() {
           if (cc.store.cardRatio >= 1 && cc.store.cardcnts >= 1) {
             cardObj = cc.find('Canvas/Game/Card/cardback').getComponent("card");
             cardObj.show();
+            cc.store.cardRatio = 0;
+            cc.find('Canvas/Game/Card/ProgressBar').getComponent(cc.ProgressBar).progress = cc.store.cardRatio;
           }
 
           heartObj = cc.find('Canvas/Game/heartPanel').getComponent("heart");
