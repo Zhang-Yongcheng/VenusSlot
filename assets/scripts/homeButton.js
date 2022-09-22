@@ -9,7 +9,7 @@ cc.Class({
       cc.store?.mainServer.GetPI().disconnect();
       this.scheduleOnce(function() {
 
-        window.location.href="https://sa.bcbtop.top/"
+        window.location.href="https://gc016.awinner88.com/"
     }, 1);
     });
   }

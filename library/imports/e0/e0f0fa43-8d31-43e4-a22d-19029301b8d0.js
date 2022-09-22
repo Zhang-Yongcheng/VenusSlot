@@ -18,7 +18,7 @@ cc.Class({
       (_cc$store3 = cc.store) == null ? void 0 : _cc$store3.mainServer.GetPI().disconnect();
 
       _this.scheduleOnce(function () {
-        window.location.href = "https://sa.bcbtop.top/";
+        window.location.href = "https://gc016.awinner88.com/";
       }, 1);
     });
   }
