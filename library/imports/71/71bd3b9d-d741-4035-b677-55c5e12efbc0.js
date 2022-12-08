@@ -11,7 +11,7 @@ cc.Class({
   onLoad: function onLoad() {
     var button = this.node.getComponent(cc.Button);
     button.node.on('click', function () {
-      var currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
+      var currentBetValue = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel/Value').getComponent(cc.Label);
       var currentBet = parseFloat(currentBetValue.string);
 
       if (currentBet < cc.store.minBet) {
@@ -44,7 +44,7 @@ cc.Class({
 
       if (millisecons > 300) {
         isTouch = true;
-        var currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
+        var currentBetValue = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel/Value').getComponent(cc.Label);
         var currentBet = parseFloat(currentBetValue.string);
 
         if (currentBet > cc.store.minBet && currentBet <= cc.store.maxBet) {

@@ -12,9 +12,9 @@ cc.Class({
       if (cc.store.canPlay() === true && cc.store.playing === false) {
         if (cc.store.userPoints >= cc.store.currentBet) {
           cc.store.playing = true;
-          var AutoPlayButton = cc.find('Canvas/Game/Machine/UI/playButton');
+          var AutoPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/playButton');
           AutoPlayButton.active = false;
-          var ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/PauseButton');
+          var ManuaPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/PauseButton');
           ManuaPlayButton.active = true;
         } else {
           var message = cc.find('Canvas/Game/message').getComponent("message");

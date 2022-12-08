@@ -17,7 +17,7 @@ cc.Class({
         cc.audioEngine.playMusic(PublicSetUp.MusicClip, true);
         button.node.active = false;
         button.getComponent(cc.Button).interactable = false;
-        var soundOffButton = cc.find('Canvas/Game/Machine/UI/Menu/SettingsPanel/SoundOffButton');
+        var soundOffButton = cc.find('Canvas/Game/Machine/UpUI/Menu/SettingsPanel/SoundOffButton');
         soundOffButton.active = true;
         soundOffButton.getComponent(cc.Button).interactable = true;
       }

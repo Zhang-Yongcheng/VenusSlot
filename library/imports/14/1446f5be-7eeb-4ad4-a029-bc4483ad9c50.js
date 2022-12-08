@@ -55,12 +55,17 @@ cc.Class({
       Heart: 0,
       VideoIdx: 0,
       soundEnabled: true,
+      BonusGame: 0,
+      bonusGameQuestion: 0,
+      bonusGameClick: 'right',
+      bonusGameWinTime: 0,
       gameResult: {},
       gameResultGotStatus: 0,
       isGameResultGot: function isGameResultGot() {
         return cc.store.gameResultGotStatus === 3;
       },
       playing: false,
+      keepAutoState: false,
       auto: false,
       test: 0,
       canPlay: function canPlay() {

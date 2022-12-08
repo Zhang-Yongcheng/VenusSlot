@@ -7,7 +7,7 @@ cc.Class({
   onLoad() {
     const button = this.node.getComponent(cc.Button);
     button.node.on('click', () => {
-      const currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
+      const currentBetValue = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel/Value').getComponent(cc.Label);
       const currentBet = parseFloat(currentBetValue.string);
       if(currentBet>cc.store.maxBet){
         currentBetValue.string=cc.store.currentBet=cc.store.maxBet;
@@ -48,7 +48,7 @@ cc.Class({
       let millisecons=touchHoldTime.getTime()-touchTime.getTime();
       if(millisecons>300){
         isTouch=true;
-        const currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
+        const currentBetValue = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel/Value').getComponent(cc.Label);
         const currentBet = parseFloat(currentBetValue.string);
         if (currentBet >= cc.store.minBet && currentBet < cc.store.maxBet) {
           if(cc.store.userPoints>=currentBet + 10){

@@ -7,9 +7,9 @@ cc.Class({
       if (cc.store.canPlay() === true && cc.store.playing === false) {
         if(cc.store.userPoints>=cc.store.currentBet){
           cc.store.playing = true;
-          const AutoPlayButton = cc.find('Canvas/Game/Machine/UI/playButton');
+          const AutoPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/playButton');
           AutoPlayButton.active = false;
-          const ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/PauseButton');
+          const ManuaPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/PauseButton');
           ManuaPlayButton.active = true;
 
 

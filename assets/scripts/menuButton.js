@@ -4,7 +4,7 @@ cc.Class({
   onLoad() {
     const button = this.node.getComponent(cc.Button);
     button.node.on('click', () => {
-      cc.find('Canvas/Game/Machine/UI/Menu').getComponent('menuController').dropDown();
+      cc.find('Canvas/Game/Machine/UpUI/Menu').getComponent('menuController').dropDown();
     });
   }
 });

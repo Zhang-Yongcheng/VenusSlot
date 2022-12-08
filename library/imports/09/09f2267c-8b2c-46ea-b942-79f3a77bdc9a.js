@@ -142,7 +142,7 @@ function playAll() {
             break;
           }
 
-          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinPointLine[_i2]);
+          cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinPointLine[_i2]);
 
           if (t > 3) {
             t = 1;
@@ -191,7 +191,7 @@ function playAll() {
             _loop2(_i3);
           }
 
-          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinTotalPoint);
+          cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinTotalPoint);
           _context3.next = 40;
           return _co["default"].waitForAll(lines);
 
@@ -242,7 +242,7 @@ function playAll() {
           anim = cc.find('Canvas/Game/FreeSpin').getComponent("freeSpinAnim"); //if(freeGameNCnts[0]==1 && cc.store.type==0){
 
           if (!(freeGameNCnts[0] == 1 && cc.store.type == 0)) {
-            _context3.next = 63;
+            _context3.next = 64;
             break;
           }
 
@@ -253,19 +253,21 @@ function playAll() {
             cc.store.type = 3;
           } else {
             cc.store.type = 2;
-          }
+          } // 儲存玩家當前為手動或自動
 
+
+          cc.store.keepAutoState = cc.store.auto;
           cc.store.auto = true;
           anim.play();
-          _context3.next = 60;
+          _context3.next = 61;
           return _co["default"].waitForSeconds(3.1);
 
-        case 60:
+        case 61:
           cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[1];
-          _context3.next = 64;
+          _context3.next = 65;
           break;
 
-        case 63:
+        case 64:
           if (type == 2) {
             //如果目前是免費遊戲
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/cnt').getComponent(cc.Label).string = freeGameNCnts[2];
@@ -278,9 +280,9 @@ function playAll() {
             }
           }
 
-        case 64:
+        case 65:
           if (!(cc.store.type == 1)) {
-            _context3.next = 72;
+            _context3.next = 74;
             break;
           }
 
@@ -291,10 +293,10 @@ function playAll() {
             cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel/total').getComponent(cc.Label).string = Math.floor(cc.store.FreeTotalPoint);
           }
 
-          _context3.next = 69;
+          _context3.next = 70;
           return _co["default"].waitForSeconds(2);
 
-        case 69:
+        case 70:
           anim.UIOff();
           PublicSetUp.freeSpinTotal = 0;
 
@@ -302,16 +304,25 @@ function playAll() {
             cc.store.auto = false;
           }
 
-        case 72:
+          if (cc.store.keepAutoState === false) {
+            cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/AutoPlayButton').active = false;
+            cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/ManuaPlayButton').active = true;
+            cc.store.auto = false;
+          } else {
+            cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/AutoPlayButton').active = true;
+            cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/ManuaPlayButton').active = false;
+          }
+
+        case 74:
           if (cc.store.userPoints < cc.store.currentBet) {
             cc.store.auto = false;
           }
 
-          cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0; // update user points
+          cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = 0; // update user points
 
-          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
+          cc.find('Canvas/Game/Machine/UI/PointScore/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
 
-        case 75:
+        case 77:
         case "end":
           return _context3.stop();
       }

@@ -66,7 +66,7 @@ if(PublicSetUp.sound==1){
     let t =1;
     for (let i = 0; i < 9; i++) {
       if (iLine[i] === 1) {
-        cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinPointLine[i]);
+        cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinPointLine[i]);
         if(t>3){
           t=1;
         }
@@ -93,7 +93,7 @@ if(PublicSetUp.sound==1){
         );
       }
     }
-    cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinTotalPoint);
+    cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = Math.floor(cc.store.gameResult.WinTotalPoint);
 
     yield co.waitForAll(lines);
 
@@ -143,7 +143,8 @@ if(PublicSetUp.sound==1){
       }else{
         cc.store.type=2;
       }
-      
+      // 儲存玩家當前為手動或自動
+      cc.store.keepAutoState = cc.store.auto
       cc.store.auto=true;
       anim.play();
       yield co.waitForSeconds(3.1);
@@ -173,6 +174,14 @@ if(PublicSetUp.sound==1){
       if(cc.store.type==3){
         cc.store.auto=false;
       }
+      if (cc.store.keepAutoState === false) {
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/AutoPlayButton').active=false;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/ManuaPlayButton').active=true;
+        cc.store.auto=false;
+      } else {
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/AutoPlayButton').active=true;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/ManuaPlayButton').active=false;
+      }
     }
 
     if(cc.store.userPoints<cc.store.currentBet){
@@ -180,8 +189,8 @@ if(PublicSetUp.sound==1){
     }
 
 
-  cc.find('Canvas/Game/Machine/UI/GameScore/Value').getComponent(cc.Label).string = 0;
+  cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = 0;
 
   // update user points
-  cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
+  cc.find('Canvas/Game/Machine/UI/PointScore/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
 }

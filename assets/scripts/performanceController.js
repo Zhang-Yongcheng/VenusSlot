@@ -106,9 +106,9 @@ cc.Class({
         if (cc.store.playing === true) {
           if(cc.store.auto==false){
             cc.store.playing=false;
-            const AutoPlayButton = cc.find('Canvas/Game/Machine/UI/playButton');
+            const AutoPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/playButton');
             AutoPlayButton.active = true;
-            const ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/PauseButton');
+            const ManuaPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/PauseButton');
             ManuaPlayButton.active = false;
           }
           yield co.waitForSeconds(1.2);
@@ -118,7 +118,7 @@ cc.Class({
   },
   update (dt) {
     var d=new Date();
-    cc.find("Canvas/Game/Machine/UI/time/txt").getComponent(cc.Label).string=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+    cc.find("Canvas/Game/Machine/UpUI/time/txt").getComponent(cc.Label).string=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
 
   },
 

@@ -1,4 +1,6 @@
+import winBonusGame from './winBonusGame.js';
 const handleGameCommand = (function () {
+  let bonusGameState = 0; // 0: 沒有bonusGame, 1: 進入bonusGame
   let first3072 = true;
   let PublicSetUp=require('PublicSetUp');
   return function handleGameCommand(vals, pi, gameObj) {
@@ -9,18 +11,33 @@ const handleGameCommand = (function () {
     
     switch (vals[0]) {
       case 3072: //　回傳本桌的資訊
+        if (bonusGameState === 1) {
+          cc.store.userPoints = vals[4];
+          bonusGameState = 0
+          // cc.find('Canvas/Game/Machine/UpUI/MenuPanel/PlayButton').getComponent(cc.Button).enabled = true;
+          cc.find('Canvas/Game/Machine/UpUI/MenuPanel/PauseButton').getComponent(cc.Button).enabled = true;
+          if (cc.store.auto === true) {
+            cc.store.playing = true;
+          } else {
+            cc.store.playing = false;
+            cc.find('Canvas/Game/Machine/UpUI/MenuPanel/playButton').active = true;
+          }
+          cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = 0
+          cc.find('Canvas/Game/Machine/UI/PointScore/GamePoint/Value').getComponent(cc.Label).string = cc.store.userPoints
+        }
+
         if (first3072 === true) {
           first3072 = false;
 
           cc.store.userPoints = vals[4];
 
-          cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
+          cc.find('Canvas/Game/Machine/UI/PointScore/GamePoint/Value').getComponent(cc.Label).string = Math.floor(cc.store.userPoints);
           
           cc.store.maxBet = vals[2];
           cc.store.minBet = cc.store.currentBet = vals[3];
           cc.store.gameResult.iGrid = vals[8];
 
-          cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label).string = cc.store.currentBet;
+          cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel/Value').getComponent(cc.Label).string = cc.store.currentBet;
 
           
 
@@ -50,6 +67,8 @@ const handleGameCommand = (function () {
           cc.store.userPoints = vals[8];
           gameResult.heart=vals[9];
           gameResult.VideoIdx=vals[10];
+          cc.store.BonusGame=vals[11];
+          bonusGameState=vals[11]
 
           // console.log(vals[3]);
           // console.log(vals[4]);
@@ -86,6 +105,10 @@ const handleGameCommand = (function () {
           cc.find('Canvas/Game/Card/cardback').active=true;
         }
         break;
+        case 3182: // 翻牌遊戲 
+          winBonusGame(cc.store.bonusGameClick, vals[1], cc.store.bonusGameQuestion, Math.round(vals[2]))
+          cc.find('Canvas/Game/Machine/UI/PointScore/GameScore/Value').getComponent(cc.Label).string = Math.round(vals[2])
+          break;
     }
   };
 })();

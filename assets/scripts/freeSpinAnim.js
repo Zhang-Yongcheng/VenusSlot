@@ -17,19 +17,23 @@
         anim.play();
     },
     UIShow(){
-        cc.find('Canvas/Game/Machine/Bg/3').active=true;
+        // cc.find('Canvas/Game/Machine/Bg/3').active=true;
         cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel').active=true;
-        cc.find('Canvas/Game/Machine/UI/BetPanel').active=false;
-        cc.find('Canvas/Game/Machine/UI/MaxBetButton').active=false;
-        cc.find('Canvas/Game/Machine/UI/AutoPlayButton').active=false;
-        cc.find('Canvas/Game/Machine/UI/ManuaPlayButton').active=false;
+        cc.find('Canvas/Game/Machine/UI/PointScore').active=false;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel').active=false;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel').active=false;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/MaxBetButton').active=false;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/AutoPlayButton').active=false;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/ManuaPlayButton').active=false;
     },
     UIOff(){
-        cc.find('Canvas/Game/Machine/Bg/3').active=false;
+        // cc.find('Canvas/Game/Machine/Bg/3').active=false;
         cc.find('Canvas/Game/Machine/UI/FreeSpinsPanel').active=false;
-        cc.find('Canvas/Game/Machine/UI/BetPanel').active=true;
-        cc.find('Canvas/Game/Machine/UI/MaxBetButton').active=true;
-        cc.find('Canvas/Game/Machine/UI/AutoPlayButton').active=true;
-        cc.find('Canvas/Game/Machine/UI/ManuaPlayButton').active=true;
+        cc.find('Canvas/Game/Machine/UI/PointScore').active=true;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel').active=true;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel').active=true;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/MaxBetButton').active=true;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/AutoPlayButton').active=true;
+        cc.find('Canvas/Game/Machine/UpUI/MenuPanel/ButtonPanel/ManuaPlayButton').active=true;
     }
   });

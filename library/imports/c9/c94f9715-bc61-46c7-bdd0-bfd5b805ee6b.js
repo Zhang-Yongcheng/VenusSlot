@@ -8,7 +8,7 @@ var PublicSetUp = require('PublicSetUp');
 
 var heartcnt = [];
 var statue = [];
-var pos = [[570, 292], [570, 196], [570, 98], [570, 0], [570, -103]];
+var pos = [[770, 400], [770, 280], [770, 160], [770, 40], [770, -80]];
 cc.Class({
   "extends": cc.Component,
   properties: {// foo: {

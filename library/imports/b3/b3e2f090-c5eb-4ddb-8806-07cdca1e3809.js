@@ -2405,7 +2405,7 @@ var Photon;
           @property {string[]} [options.plugins] Expected server plugins.
           @property {string} [options.lobbyName] Name of the lobby to create room in.
           @property {Photon.LoadBalancing.Constants.LobbyType} [options.lobbyType=LobbyType.Default] Type of the lobby.
-            */
+           */
 
 
       LoadBalancingClient.prototype.createRoom = function (roomName, options) {
@@ -2432,7 +2432,7 @@ var Photon;
           @property {string[]} [createOptions.plugins] Informs the server of the expected plugin setup.
           @property {string} [createOptions.lobbyName=""] Name of the lobby to create room in.
           @property {Photon.LoadBalancing.Constants.LobbyType} [createOptions.lobbyType=LobbyType.Default] Type of the lobby.
-            */
+           */
 
 
       LoadBalancingClient.prototype.joinRoom = function (roomName, options, createOptions) {
@@ -2733,7 +2733,7 @@ var Photon;
           Alternatively, automated updates can be set up during {@link Photon.LoadBalancing.LoadBalancingClient#connect connect}.
           @method Photon.LoadBalancing.LoadBalancingClient#requestLobbyStats
           @param {any[]} lobbiesToRequest Array of lobbies id pairs [ [lobbyName1, lobbyType1], [lobbyName2, lobbyType2], ... ]. If not specified or null, statistics for all lobbies requested.
-            **/
+           **/
 
 
       LoadBalancingClient.prototype.requestLobbyStats = function (lobbiesToRequest) {
@@ -5051,7 +5051,7 @@ var Photon;
           @borrows Photon.LoadBalancing.LoadBalancingClient#isConnectedToNameServer
           @borrows Photon.LoadBalancing.LoadBalancingClient#disconnect
           @borrows Photon.LoadBalancing.LoadBalancingClient#setLogLevel
-                @constructor Photon.Chat.ChatClient
+               @constructor Photon.Chat.ChatClient
           @param {Photon.ConnectionProtocol} protocol Connecton protocol.
           @param {string} appId Cloud application ID.
           @param {string} appVersion Cloud application version.

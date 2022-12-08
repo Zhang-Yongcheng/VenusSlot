@@ -49,6 +49,10 @@ cc.Class({
       Heart:0,
       VideoIdx:0,
       soundEnabled: true,
+      BonusGame: 0,
+      bonusGameQuestion: 0,
+      bonusGameClick: 'right',
+      bonusGameWinTime: 0,
 
       gameResult: {},
       gameResultGotStatus: 0,
@@ -57,6 +61,7 @@ cc.Class({
       },
 
       playing: false,
+      keepAutoState: false,
       auto:false,
       test:0,
       canPlay() {

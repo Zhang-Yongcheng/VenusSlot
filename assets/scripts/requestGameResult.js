@@ -94,7 +94,7 @@ const requestGameResult = (function () {
     }else{
       cc.store?.gameServer.GetPI().sendData(3162, 0);
     }
-    cc.find('Canvas/Game/Machine/UI/GamePoint/Value').getComponent(cc.Label).string=cc.store.userPoints-cc.store.currentBet;
+    cc.find('Canvas/Game/Machine/UI/PointScore/GamePoint/Value').getComponent(cc.Label).string=cc.store.userPoints-cc.store.currentBet;
     //console.log(3162);
 
     coGroup.start(function* () {

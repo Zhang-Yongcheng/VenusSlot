@@ -11,9 +11,9 @@ cc.Class({
     button.node.on('click', function () {
       if (cc.store.playing === true) {
         cc.store.playing = false;
-        var AutoPlayButton = cc.find('Canvas/Game/Machine/UI/playButton');
+        var AutoPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/playButton');
         AutoPlayButton.active = true;
-        var ManuaPlayButton = cc.find('Canvas/Game/Machine/UI/PauseButton');
+        var ManuaPlayButton = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/PauseButton');
         ManuaPlayButton.active = false;
       }
     });

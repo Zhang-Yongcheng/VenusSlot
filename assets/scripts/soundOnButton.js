@@ -13,7 +13,7 @@ cc.Class({
         button.node.active = false;
         button.getComponent(cc.Button).interactable = false;
 
-        const soundOffButton = cc.find('Canvas/Game/Machine/UI/Menu/SettingsPanel/SoundOffButton');
+        const soundOffButton = cc.find('Canvas/Game/Machine/UpUI/Menu/SettingsPanel/SoundOffButton');
         soundOffButton.active = true;
         soundOffButton.getComponent(cc.Button).interactable = true;
       }

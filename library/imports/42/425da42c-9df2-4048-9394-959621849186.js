@@ -9,7 +9,7 @@ cc.Class({
   onLoad: function onLoad() {
     var button = this.node.getComponent(cc.Button);
     button.node.on('click', function () {
-      var currentBetValue = cc.find('Canvas/Game/Machine/UI/BetPanel/Value').getComponent(cc.Label);
+      var currentBetValue = cc.find('Canvas/Game/Machine/UpUI/MenuPanel/BetPanel/Value').getComponent(cc.Label);
       var currentBet = parseInt(currentBetValue.string);
 
       if (currentBet !== cc.store.maxBet) {

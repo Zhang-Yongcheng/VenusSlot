@@ -13,7 +13,7 @@ cc.Class({
         button.getComponent(cc.Button).interactable = false;
         cc.audioEngine.stopAll();
         cc.audioEngine.stopMusic();
-        const soundOnButton = cc.find('Canvas/Game/Machine/UI/Menu/SettingsPanel/SoundOnButton');
+        const soundOnButton = cc.find('Canvas/Game/Machine/UpUI/Menu/SettingsPanel/SoundOnButton');
         soundOnButton.active = true;
         soundOnButton.getComponent(cc.Button).interactable = true;
       }

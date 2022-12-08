@@ -1,0 +1,64 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "mask",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.4166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "bg": {
+        "props": {
+          "active": []
+        }
+      }
+    },
+    "props": {
+      "scale": [
+        {
+          "frame": 0,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "frame": 0.4166666666666667,
+          "value": {
+            "__type__": "cc.Vec2",
+            "x": 0.8,
+            "y": 0.8
+          }
+        }
+      ],
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            -156.272,
+            93.627,
+            0
+          ],
+          "curve": [
+            0.6928571428571428,
+            0,
+            0.5428571428571428,
+            0.9964285714285713
+          ]
+        },
+        {
+          "frame": 0.4166666666666667,
+          "value": [
+            -1.353,
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "events": []
+}
